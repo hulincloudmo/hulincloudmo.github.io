@@ -1,5 +1,4 @@
 module.exports = {
-  base: '/vuepress',
   title: '陌上青夏的开发书',
   description: '陌上花开，可缓缓归矣',
   themeConfig: {
