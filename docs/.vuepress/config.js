@@ -30,6 +30,13 @@ module.exports = {
           ['miniprogram/','微信小程序'],
           'miniprogram/scroll-view'
         ]
+      },
+      {
+        title: "运维相关",
+        collapseable: false,
+        children: [
+          'operation/auto-CI'
+        ]
       }
     ]
   }
