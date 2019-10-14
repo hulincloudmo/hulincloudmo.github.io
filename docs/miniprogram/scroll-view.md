@@ -3,7 +3,7 @@
 ## scroll-view和view
  我们在使用scroll-view的时候，都会想到scroll-view其实是view的特殊封装，可是实际开发中，我们会发现这样的情况：
  
-![Image text](/vuepress/view-long.jpg)
+![Image text](/vuepress.github.io/view-long.jpg)
 
 ## 哇？为什么？我的scroll-view的高度为什么会达到8920px这么高？
 
