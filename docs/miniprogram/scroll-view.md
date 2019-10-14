@@ -3,7 +3,7 @@
 ## scroll-view和view
  我们在使用scroll-view的时候，都会想到scroll-view其实是view的特殊封装，可是实际开发中，我们会发现这样的情况：
  
-<img :src="$withBase('/scroll-view-long.png')" alt="foo">
+![Image text](/vuepress/view-long.jpg)
 
 ## 哇？为什么？我的scroll-view的高度为什么会达到8920px这么高？
 
@@ -22,7 +22,7 @@
 ```
 成功了！通过限定scroll-view的高度，我们让页面重新变的正常，我们解决了这个坑，开心！
 
-<img :src="$withBase('/scroll-view-fix.png')" alt="foo">
+![Image text](/vuepress/scroll-view-fix.jpg)
 
 ## 这样做是最佳的解决方案么？
 通过上面的修正，我们终于让scroll-view恢复了正常，但是，我们把scroll-view的高度写死了！！！我们在开发的过程中，应该尽量避免将一个外层布局的高度给写死了，虽然对我们开发攻城狮来说，写死并不会有太大的影响，就算以后想改，也是改一个数字而已，但是对于运营来说，这就是一个噩梦。运营可能会使用各种大小的图片，很可能在某一天，他使用的图片高度超过了你所设置的高度，那么图片将会显示不全！
@@ -43,7 +43,7 @@
 ````
 我们来看看效果图
 
-<img :src="$withBase('/scroll-view-best.png')" alt="foo">
+![Image text](/vuepress/scroll-view-best.jpg)
 
 完美实现了预期的效果，scroll-view的高度不再由自身决定，而是由内层的view来决定
 
