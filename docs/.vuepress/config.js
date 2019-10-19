@@ -7,7 +7,6 @@ module.exports = {
     serviceWorker: {
       updatePopup: true
     },
-    evergreen: true,
     lastUpdated: 'last update',
     nav: [
       { text: '首页', link: '/' },
