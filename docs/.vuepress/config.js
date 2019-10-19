@@ -7,6 +7,7 @@ module.exports = {
     serviceWorker: {
       updatePopup: true
     },
+    lastUpdate: "上次码字时间",
     nav: [
       { text: '首页', link: '/' },
       { text: '编程手记', link: '/guide/' },
@@ -15,6 +16,13 @@ module.exports = {
 
     ],
     sidebar: [
+      {
+        title: "编程思想",
+        collapsable: false,
+        children: [
+          'code-style/code'
+        ]
+      },
       {
         title: "Typescript",
         collapsable: false,
@@ -28,12 +36,14 @@ module.exports = {
         collapsable: false,
         children: [
           ['miniprogram/','微信小程序'],
-          'miniprogram/scroll-view'
+          'miniprogram/scroll-view',
+          'miniprogram/loading',
+          'miniprogram/paging'
         ]
       },
       {
         title: "运维相关",
-        collapseable: false,
+        collapsable: false,
         children: [
           'operation/auto-CI'
         ]
