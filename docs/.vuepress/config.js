@@ -7,6 +7,7 @@ module.exports = {
     serviceWorker: {
       updatePopup: true
     },
+    evergreen: true,
     lastUpdated: 'last update',
     nav: [
       { text: '首页', link: '/' },
@@ -16,7 +17,7 @@ module.exports = {
 
     ],
     sidebar: {
-      '/guide/': [
+      "/guide/": [
         {
           title: "编程思想",
           collapsable: false,
@@ -28,7 +29,7 @@ module.exports = {
           title: "Typescript",
           collapsable: false,
           children: [
-            'guide/test'
+            'test'
           ]
         },
         {
