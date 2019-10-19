@@ -7,6 +7,7 @@ module.exports = {
     serviceWorker: {
       updatePopup: true
     },
+    evergreen: true,
     lastUpdated: 'last update',
     nav: [
       { text: '首页', link: '/' },
@@ -15,37 +16,44 @@ module.exports = {
       { text: '博客链接', link: 'http://mookaihang.design' },
 
     ],
-    sidebar: [
-      {
-        title: "编程思想",
-        collapsable: false,
-        children: [
-          'code-style/code'
-        ]
-      },
-      {
-        title: "Typescript",
-        collapsable: false,
-        children: [
-          'guide/test'
-        ]
-      },
-      {
-        title: "微信小程序相关",
-        collapsable: false,
-        children: [
-          'miniprogram/scroll-view',
-          'miniprogram/loading',
-          'miniprogram/paging'
-        ]
-      },
-      {
-        title: "运维相关",
-        collapsable: false,
-        children: [
-          'operation/auto-CI'
-        ]
-      }
-    ]
+    sidebar: {
+      '/guide/': [
+        {
+          title: "编程思想",
+          collapsable: false,
+          children: [
+            'code-style/code'
+          ]
+        },
+        {
+          title: "Typescript",
+          collapsable: false,
+          children: [
+            'guide/test'
+          ]
+        },
+        {
+          title: "微信小程序相关",
+          collapsable: false,
+          children: [
+            'miniprogram/scroll-view',
+            'miniprogram/loading',
+            'miniprogram/paging'
+          ]
+        },
+        {
+          title: "运维相关",
+          collapsable: false,
+          children: [
+            'operation/auto-CI'
+          ]
+        }
+      ],
+      "/mood/": [
+        {
+          title: ""
+        }
+      ]
+    }
   }
 }
