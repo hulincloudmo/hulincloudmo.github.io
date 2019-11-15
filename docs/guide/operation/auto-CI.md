@@ -55,7 +55,38 @@ GitLab CI作为GitLab的一部分免费提供，并且可以相当快速地设�
 ### 使用Travis自动化部署
 因为本博客是开源的，我也就选用了Travis作为CI工具。
 
-在网上也有使用Travis的示例，我这里就不再详细介绍了，总结一下部署过程中遇到的问题
+#### 部署过程：
+1.要使用travis肯定要先注册的呢，在官网注册一个账号
+2.编写自动化脚本，这里每个人的都不同，我展示一下我的配置，可供参照
+```shell script
+#!/usr/bin/env sh
+​
+# abort on errors
+set -e
+​
+# build
+npm run docs:build
+​
+# navigate into the build output directory
+cd docs/.vuepress/dist
+​
+# if you are deploying to a custom domain
+# echo 'www.example.com' > CNAME
+​
+git init
+git add -A
+git commit -m 'deploy'
+​
+# if you are deploying to https://<USERNAME>.github.io
+# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
+​
+# if you are deploying to https://<USERNAME>.github.io/<REPO>
+ git push -f https://${access_token}@github.com/<USERNAME>/<USERNAME>.github.io.git master
+​
+cd -
+
+```
+在脚本中我们看到需要配置access_token，这个信息需要在github上配置，并且给这个access_token推送等权限，这样travis才能自动的推送编译好的代码到github容器中
 
 * 因为项目不是配在根目录下，需要在vuepress的config中配置base路径： 例： “base: "/vuepress.github.io/"”
 
