@@ -20,6 +20,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 ​
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
- git push -f https://${access_token}@github.com/<USERNAME>/<USERNAME>.github.io.git master
+ git push -f https://${access_token}@github.com/<USERNAME>/<USERNAME>.github.io.git dev
 ​
 cd -
