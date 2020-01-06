@@ -9,6 +9,6 @@ features:
 - title: 技术栈
   details: Vue全家桶+node+springboot+uni-app+小程序
 - title: 心灵鸡汤
-  details: 当我们眺望远方的时候，近处的风景就看不清了
+  details: 编程的动机是什么？不是为了学多少源码，多少API，一定要是解决问题的能力！
 footer: --- Your know life is not about looking forward,it is about looking backward and connecting the dots
    ---
