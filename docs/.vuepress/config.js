@@ -15,6 +15,7 @@ module.exports = {
       { text: '编程手记', link: '/guide/' },
       { text: '课程学习',link: "/study/" },
       { text: '心情笔录', link: '/mood/' },
+      { text: '个人简历', link:'/resume'},
       { text: '博客链接', link: 'http://mookaihang.design' },
 
     ],
@@ -76,6 +77,7 @@ module.exports = {
           collapsable: false,
           children: [
             '7yue',
+            'disorder'
           ]
         },
       ]
