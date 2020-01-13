@@ -6,7 +6,7 @@
  我们在使用scroll-view的时候，都会想到scroll-view其实是view的特殊封装，可是实际开发中，我们会发现这样的情况：
 ::::
  
-![Image text](/vuepress.github.io/view-long.jpg)
+![Image text](/view-long.jpg)
 
 ## 哇？为什么？我的scroll-view的高度为什么会达到8920px这么高？
 
@@ -25,7 +25,7 @@
 ```
 成功了！通过限定scroll-view的高度，我们让页面重新变的正常，我们解决了这个坑，开心！
 
-![Image text](/vuepress.github.io/scroll-view-fix.jpg)
+![Image text](/scroll-view-fix.jpg)
 
 ## 这样做是最佳的解决方案么？<Badge text="better?" type="warn"/> <Badge text="改改改"/>
 :::: warning 改进
@@ -51,7 +51,7 @@
 ````
 我们来看看效果图
 
-![Image text](/vuepress.github.io/scroll-view-best.jpg)
+![Image text](/scroll-view-best.jpg)
 
 完美实现了预期的效果，scroll-view的高度不再由自身决定，而是由内层的view来决定
 

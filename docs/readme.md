@@ -5,7 +5,7 @@ actionText: 开始 →
 actionLink: /guide/
 features:
 - title: 个人介绍
-  details: 一个不只满足于前端的开发攻城狮
+  details: 我是一个不只满足于前端的开发攻城狮
 - title: 技术栈
   details: Vue全家桶+node+springboot+uni-app+小程序
 - title: 心灵鸡汤

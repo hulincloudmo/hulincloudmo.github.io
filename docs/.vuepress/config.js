@@ -12,11 +12,10 @@ module.exports = {
     lastUpdated: '上次码字的时间吖',
     nav: [
       { text: '首页', link: '/' },
-      { text: '编程手记', link: '/guide/' },
-      { text: '课程学习',link: "/study/" },
+      { text: '业务手记', link: '/guide/' },
+      { text: '理论也很重要吖',link: "/study/" },
       { text: '心情笔录', link: '/mood/' },
       { text: '个人简历', link:'/resume'},
-      { text: '博客链接', link: 'http://mookaihang.design' },
 
     ],
     sidebar: {
@@ -55,14 +54,16 @@ module.exports = {
           title: "电商相关",
           collapsable: false,
           children: [
-            'electronic-commerce/spu-and-sku'
+            'electronic-commerce/spu-and-sku',
+            'electronic-commerce/spu-shop'
           ]
         },
         {
           title: "运维相关",
           collapsable: false,
           children: [
-            'operation/auto-CI'
+            'operation/auto-CI',
+            'operation/create-your-blog'
           ]
         }
       ],
@@ -73,7 +74,7 @@ module.exports = {
       ],
       "/study/": [
         {
-          title: "电商全栈",
+          title: "小知识",
           collapsable: false,
           children: [
             '7yue',
