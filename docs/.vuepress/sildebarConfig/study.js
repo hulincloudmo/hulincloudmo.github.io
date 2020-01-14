@@ -3,15 +3,15 @@ let study = [
     title: "小知识",
     collapsable: false,
     children: [
-      '7yue',
-      'disorder'
+      '/study/7yue',
+      '/study/disorder'
     ]
   },
   {
     title: "springboot",
     collapsable: false,
     children: [
-      '/springboot/autowired'
+      '/study//springboot/autowired'
     ]
   }
 ]
