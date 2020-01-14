@@ -11,7 +11,7 @@ let study = [
     title: "springboot",
     collapsable: false,
     children: [
-      '/study//springboot/autowired'
+      '/study/springboot/autowired'
     ]
   }
 ]
