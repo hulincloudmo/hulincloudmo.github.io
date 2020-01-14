@@ -3,22 +3,261 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>微信小程序编写一个高面向对象的规格选择(SPU)组件 | 陌上青夏的开发书</title>
+    <title>SKU和SPU的故事 | 陌上青夏</title>
     <meta name="description" content="陌上花开，可缓缓归矣">
     
     
-    <link rel="preload" href="/assets/css/0.styles.92bb110a.css" as="style"><link rel="preload" href="/assets/js/app.072dcc25.js" as="script"><link rel="preload" href="/assets/js/2.e98754a8.js" as="script"><link rel="preload" href="/assets/js/9.2d319fe3.js" as="script"><link rel="prefetch" href="/assets/js/10.0b79365b.js"><link rel="prefetch" href="/assets/js/11.d2ad65ac.js"><link rel="prefetch" href="/assets/js/12.1b894571.js"><link rel="prefetch" href="/assets/js/13.0c089d12.js"><link rel="prefetch" href="/assets/js/14.75d52837.js"><link rel="prefetch" href="/assets/js/15.a42dadeb.js"><link rel="prefetch" href="/assets/js/16.8b53e9f7.js"><link rel="prefetch" href="/assets/js/17.2ad13f5d.js"><link rel="prefetch" href="/assets/js/18.fff0210d.js"><link rel="prefetch" href="/assets/js/19.b391f6a1.js"><link rel="prefetch" href="/assets/js/20.97a6ff1c.js"><link rel="prefetch" href="/assets/js/21.240fafa7.js"><link rel="prefetch" href="/assets/js/22.1e0d0312.js"><link rel="prefetch" href="/assets/js/23.95298831.js"><link rel="prefetch" href="/assets/js/24.10823f84.js"><link rel="prefetch" href="/assets/js/25.f5be09f9.js"><link rel="prefetch" href="/assets/js/26.7cc46da9.js"><link rel="prefetch" href="/assets/js/27.d5d24824.js"><link rel="prefetch" href="/assets/js/3.c3b3332b.js"><link rel="prefetch" href="/assets/js/4.93bbf539.js"><link rel="prefetch" href="/assets/js/5.9b643342.js"><link rel="prefetch" href="/assets/js/6.5d7d5f90.js"><link rel="prefetch" href="/assets/js/7.cef98872.js"><link rel="prefetch" href="/assets/js/8.03e735c1.js">
-    <link rel="stylesheet" href="/assets/css/0.styles.92bb110a.css">
+    <link rel="preload" href="/assets/css/0.styles.e091c57e.css" as="style"><link rel="preload" href="/assets/js/app.242b641d.js" as="script"><link rel="preload" href="/assets/js/3.74c25131.js" as="script"><link rel="preload" href="/assets/js/1.ab049720.js" as="script"><link rel="preload" href="/assets/js/14.da42673f.js" as="script"><link rel="prefetch" href="/assets/js/10.1f7bd092.js"><link rel="prefetch" href="/assets/js/11.1b566ac0.js"><link rel="prefetch" href="/assets/js/12.554efd07.js"><link rel="prefetch" href="/assets/js/13.6ab62fe7.js"><link rel="prefetch" href="/assets/js/15.a5281c04.js"><link rel="prefetch" href="/assets/js/16.5c586515.js"><link rel="prefetch" href="/assets/js/17.3f2edcf9.js"><link rel="prefetch" href="/assets/js/18.bfdc366b.js"><link rel="prefetch" href="/assets/js/19.eb0a5adc.js"><link rel="prefetch" href="/assets/js/20.a36b3bb3.js"><link rel="prefetch" href="/assets/js/21.017955a6.js"><link rel="prefetch" href="/assets/js/22.7125580f.js"><link rel="prefetch" href="/assets/js/23.5d07087e.js"><link rel="prefetch" href="/assets/js/24.d467721e.js"><link rel="prefetch" href="/assets/js/25.6ba81f35.js"><link rel="prefetch" href="/assets/js/26.82f91302.js"><link rel="prefetch" href="/assets/js/27.9687de7b.js"><link rel="prefetch" href="/assets/js/28.0123b355.js"><link rel="prefetch" href="/assets/js/29.d72051fa.js"><link rel="prefetch" href="/assets/js/30.3726cf21.js"><link rel="prefetch" href="/assets/js/31.2c7e18b9.js"><link rel="prefetch" href="/assets/js/32.383cbae4.js"><link rel="prefetch" href="/assets/js/4.808c28fe.js"><link rel="prefetch" href="/assets/js/5.56318620.js"><link rel="prefetch" href="/assets/js/6.83e356ad.js"><link rel="prefetch" href="/assets/js/7.c4e45ebf.js"><link rel="prefetch" href="/assets/js/8.b8d30906.js"><link rel="prefetch" href="/assets/js/9.aa23ccd8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e091c57e.css">
   </head>
   <body>
-    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">陌上青夏的开发书</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">业务手记</a></div><div class="nav-item"><a href="/study/" class="nav-link">理论也很重要吖</a></div><div class="nav-item"><a href="/mood/" class="nav-link">心情笔录</a></div><div class="nav-item"><a href="/resume.html" class="nav-link">个人简历</a></div> <a href="https://github.com/hulincloudmo/hulincloudmo.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-4698c43e><div data-v-4698c43e><div id="loader-wrapper" class="loading-wrapper" data-v-4b73742e data-v-4698c43e data-v-4698c43e><div class="loader-main" data-v-4b73742e><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-6cbeab0a data-v-4698c43e data-v-4698c43e><h3 class="title" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a>陌上青夏</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a><input type="password" value="" data-v-6cbeab0a> <span data-v-6cbeab0a>Konck! Knock!</span> <button data-v-6cbeab0a>OK</button></label> <div class="footer" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a><span data-v-6cbeab0a><i class="iconfont reco-theme" data-v-6cbeab0a></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-6cbeab0a>vuePress-theme-reco</a></span> <span data-v-6cbeab0a><i class="iconfont reco-copyright" data-v-6cbeab0a></i> <a data-v-6cbeab0a><span data-v-6cbeab0a>陌上青夏</span>
+            
+          <!---->
+          2020
+        </a></span></div></div> <div class="hide" data-v-4698c43e><header class="navbar" data-v-4698c43e><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">陌上青夏</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link router-link-active"><i class="iconfont reco-blog"></i>
+  业务手记
+</a></div><div class="nav-item"><a href="/study/" class="nav-link"><i class="iconfont reco-coding"></i>
+  理论也很重要吖
+</a></div><div class="nav-item"><a href="/mood/" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  心情笔录
+</a></div><div class="nav-item"><a href="/resume/" class="nav-link"><i class="iconfont reco-eye"></i>
+  个人简历
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间记忆
+</a></div> <a href="https://github.com/hulincloudmo/hulincloudmo.github.io" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
     GitHub
-    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/guide/" class="nav-link router-link-active">业务手记</a></div><div class="nav-item"><a href="/study/" class="nav-link">理论也很重要吖</a></div><div class="nav-item"><a href="/mood/" class="nav-link">心情笔录</a></div><div class="nav-item"><a href="/resume.html" class="nav-link">个人简历</a></div> <a href="https://github.com/hulincloudmo/hulincloudmo.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask" data-v-4698c43e></div> <aside class="sidebar" data-v-4698c43e><div class="personal-info-wrapper" data-v-6c8ffc9c><img src="/default-avatar.jpg" alt="author-avatar" class="personal-img" data-v-6c8ffc9c> <h3 class="name" data-v-6c8ffc9c>
+    陌上青夏
+  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>8</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>6</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><a href="/guide/" class="nav-link router-link-active"><i class="iconfont reco-blog"></i>
+  业务手记
+</a></div><div class="nav-item"><a href="/study/" class="nav-link"><i class="iconfont reco-coding"></i>
+  理论也很重要吖
+</a></div><div class="nav-item"><a href="/mood/" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  心情笔录
+</a></div><div class="nav-item"><a href="/resume/" class="nav-link"><i class="iconfont reco-eye"></i>
+  个人简历
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间记忆
+</a></div> <a href="https://github.com/hulincloudmo/hulincloudmo.github.io" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
     GitHub
-    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>编程思想</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/code-style/code.html" class="sidebar-link">各类语言通用</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>javascript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/js/rubbish-recover.html" class="sidebar-link">JS的垃圾回收机制与闭包的使用</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Typescript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/test.html" class="sidebar-link">安装 TypeScript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>微信小程序相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/miniprogram/scroll-view.html" class="sidebar-link">为什么我的scroll-view的高度会如此之高？</a></li><li><a href="/guide/miniprogram/loading.html" class="sidebar-link">loading状态的思考</a></li><li><a href="/guide/miniprogram/paging.html" class="sidebar-link">移动前端分页加载的探讨</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>电商相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/electronic-commerce/spu-and-sku.html" class="sidebar-link">深入浅出SPU、SKU</a></li><li><a href="/guide/electronic-commerce/spu-shop.html" class="active sidebar-link">微信小程序编写一个高面向对象的规格选择(SPU)组件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/electronic-commerce/spu-shop.html#开场白" class="sidebar-link">开场白</a></li><li class="sidebar-sub-header"><a href="/guide/electronic-commerce/spu-shop.html#服务器数据" class="sidebar-link">服务器数据</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>运维相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/operation/auto-CI.html" class="sidebar-link">自动化部署</a></li><li><a href="/guide/operation/create-your-blog.html" class="sidebar-link">如何创建一个像我一样的blog</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="微信小程序编写一个高面向对象的规格选择-spu-组件"><a href="#微信小程序编写一个高面向对象的规格选择-spu-组件" aria-hidden="true" class="header-anchor">#</a> 微信小程序编写一个高面向对象的规格选择(SPU)组件</h1> <h2 id="开场白"><a href="#开场白" aria-hidden="true" class="header-anchor">#</a> 开场白</h2> <p>本文开始将介绍如何使用微信小程序实现一个完美的，面向对象的SPU组件，因为代码较多，最后将会提供github源码链接供大家参考！</p> <h2 id="服务器数据"><a href="#服务器数据" aria-hidden="true" class="header-anchor">#</a> 服务器数据</h2> <p>我们首先先看看服务器所返回的数据结构</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次码字的时间吖:</span> <span class="time">1/13/2020, 1:02:22 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
-      ←
-      <a href="/guide/electronic-commerce/spu-and-sku.html" class="prev">深入浅出SPU、SKU</a></span> <span class="next"><a href="/guide/operation/auto-CI.html">自动化部署</a>→
-    </span></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.072dcc25.js" defer></script><script src="/assets/js/2.e98754a8.js" defer></script><script src="/assets/js/9.2d319fe3.js" defer></script>
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>编程思想</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/code-style/code.html" class="sidebar-link">各类语言通用</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>javascript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/js/rubbish-recover.html" class="sidebar-link">JS的垃圾回收机制与闭包的使用</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Typescript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/test.html" class="sidebar-link">安装 TypeScript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>微信小程序相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/miniprogram/scroll-view.html" class="sidebar-link">为什么我的scroll-view的高度会如此之高？</a></li><li><a href="/guide/miniprogram/loading.html" class="sidebar-link">loading状态的思考</a></li><li><a href="/guide/miniprogram/paging.html" class="sidebar-link">移动前端分页加载？</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>电商相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/electronic-commerce/spu-and-sku.html" class="sidebar-link">深入浅出SPU、SKU</a></li><li><a href="/guide/electronic-commerce/spu-shop.html" class="active sidebar-link">SKU和SPU的故事</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/electronic-commerce/spu-shop.html#开场白" class="sidebar-link">开场白</a></li><li class="sidebar-sub-header"><a href="/guide/electronic-commerce/spu-shop.html#服务器数据" class="sidebar-link">服务器数据</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>运维相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/operation/auto-CI.html" class="sidebar-link">自动化部署</a></li><li><a href="/guide/operation/create-your-blog.html" class="sidebar-link">如何创建blog？</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-6cbeab0a data-v-4698c43e><h3 class="title" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a>SKU和SPU的故事</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a><input type="password" value="" data-v-6cbeab0a> <span data-v-6cbeab0a>Konck! Knock!</span> <button data-v-6cbeab0a>OK</button></label> <div class="footer" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a><span data-v-6cbeab0a><i class="iconfont reco-theme" data-v-6cbeab0a></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-6cbeab0a>vuePress-theme-reco</a></span> <span data-v-6cbeab0a><i class="iconfont reco-copyright" data-v-6cbeab0a></i> <a data-v-6cbeab0a><span data-v-6cbeab0a>陌上青夏</span>
+            
+          <!---->
+          2020
+        </a></span></div></div> <div data-v-4698c43e><main class="page"><!----> <div class="page-title" style="display:none;"><h1>SKU和SPU的故事</h1> <hr> <div data-v-484a899e><i class="iconfont reco-account" data-v-484a899e><span data-v-484a899e>陌上青夏</span></i> <i class="iconfont reco-date" data-v-484a899e><span data-v-484a899e>2020-01-14 16:00:18</span></i> <!----> <i class="iconfont reco-tag tags" data-v-484a899e><span class="tag-item" data-v-484a899e>
+      组件实践
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h1 id="微信小程序编写一个高面向对象的规格选择-spu-组件"><a href="#微信小程序编写一个高面向对象的规格选择-spu-组件" aria-hidden="true" class="header-anchor">#</a> 微信小程序编写一个高面向对象的规格选择(SPU)组件</h1> <h2 id="开场白"><a href="#开场白" aria-hidden="true" class="header-anchor">#</a> 开场白</h2> <p>本文开始将介绍如何使用微信小程序实现一个完美的，面向对象的SPU组件，因为代码较多，最后将会提供github源码链接供大家参考！</p> <p>效果图<a href="/spu-preview.jpg">!Image</a></p> <h2 id="服务器数据"><a href="#服务器数据" aria-hidden="true" class="header-anchor">#</a> 服务器数据</h2> <p>我们首先先看看服务器所返回的数据结构</p> <pre><code> {
+    &quot;id&quot;:2,
+    &quot;title&quot;:&quot;林间有风自营针织衫&quot;,
+    &quot;subtitle&quot;:&quot;瓜瓜设计，3件包邮&quot;,
+    &quot;category_id&quot;:12,
+    &quot;root_category_id&quot;:2,
+    &quot;price&quot;:&quot;77.00&quot;,
+    &quot;img&quot;:&quot;&quot;,
+    &quot;for_theme_img&quot;:&quot;&quot;,
+    &quot;description&quot;:null,
+    &quot;discount_price&quot;:&quot;62.00&quot;,
+    &quot;tags&quot;:&quot;包邮$热门&quot;,
+    &quot;is_test&quot;:true,
+    &quot;online&quot;:true,
+    &quot;sku_list&quot;:[
+        {
+            &quot;id&quot;:2,
+            &quot;price&quot;:77.76,
+            &quot;discount_price&quot;:null,
+            &quot;online&quot;:true,
+            &quot;img&quot;:&quot;&quot;,
+            &quot;title&quot;:&quot;金属灰·七龙珠&quot;,
+            &quot;spu_id&quot;:2,
+            &quot;category_id&quot;:17,
+            &quot;root_category_id&quot;:3,
+            &quot;specs&quot;:[
+                {
+                    &quot;key_id&quot;:1,
+                    &quot;key&quot;:&quot;颜色&quot;,
+                    &quot;value_id&quot;:45,
+                    &quot;value&quot;:&quot;金属灰&quot;
+                },
+                {
+                    &quot;key_id&quot;:3,
+                    &quot;key&quot;:&quot;图案&quot;,
+                    &quot;value_id&quot;:9,
+                    &quot;value&quot;:&quot;七龙珠&quot;
+                },
+                {
+                    &quot;key_id&quot;:4,
+                    &quot;key&quot;:&quot;尺码&quot;,
+                    &quot;value_id&quot;:14,
+                    &quot;value&quot;:&quot;小号 S&quot;
+                }
+            ],
+            &quot;code&quot;:&quot;2$1-45#3-9#4-14&quot;,
+            &quot;stock&quot;:5
+        },
+        {
+            &quot;id&quot;:3,
+            &quot;price&quot;:66,
+            &quot;discount_price&quot;:59,
+            &quot;online&quot;:true,
+            &quot;img&quot;:&quot;&quot;,
+            &quot;title&quot;:&quot;青芒色·灌篮高手&quot;,
+            &quot;spu_id&quot;:2,
+            &quot;category_id&quot;:17,
+            &quot;root_category_id&quot;:3,
+            &quot;specs&quot;:[
+                {
+                    &quot;key_id&quot;:1,
+                    &quot;key&quot;:&quot;颜色&quot;,
+                    &quot;value_id&quot;:42,
+                    &quot;value&quot;:&quot;青芒色&quot;
+                },
+                {
+                    &quot;key_id&quot;:3,
+                    &quot;key&quot;:&quot;图案&quot;,
+                    &quot;value_id&quot;:10,
+                    &quot;value&quot;:&quot;灌篮高手&quot;
+                },
+                {
+                    &quot;key_id&quot;:4,
+                    &quot;key&quot;:&quot;尺码&quot;,
+                    &quot;value_id&quot;:15,
+                    &quot;value&quot;:&quot;中号 M&quot;
+                }
+            ],
+            &quot;code&quot;:&quot;2$1-42#3-10#4-15&quot;,
+            &quot;stock&quot;:999
+        },
+        {
+            &quot;id&quot;:4,
+            &quot;price&quot;:88,
+            &quot;discount_price&quot;:null,
+            &quot;online&quot;:true,
+            &quot;img&quot;:&quot;&quot;,
+            &quot;title&quot;:&quot;青芒色·圣斗士&quot;,
+            &quot;spu_id&quot;:2,
+            &quot;category_id&quot;:17,
+            &quot;root_category_id&quot;:3,
+            &quot;specs&quot;:[
+                {
+                    &quot;key_id&quot;:1,
+                    &quot;key&quot;:&quot;颜色&quot;,
+                    &quot;value_id&quot;:42,
+                    &quot;value&quot;:&quot;青芒色&quot;
+                },
+                {
+                    &quot;key_id&quot;:3,
+                    &quot;key&quot;:&quot;图案&quot;,
+                    &quot;value_id&quot;:11,
+                    &quot;value&quot;:&quot;圣斗士&quot;
+                },
+                {
+                    &quot;key_id&quot;:4,
+                    &quot;key&quot;:&quot;尺码&quot;,
+                    &quot;value_id&quot;:16,
+                    &quot;value&quot;:&quot;大号  L&quot;
+                }
+            ],
+            &quot;code&quot;:&quot;2$1-42#3-11#4-16&quot;,
+            &quot;stock&quot;:8
+        },
+        {
+            &quot;id&quot;:5,
+            &quot;price&quot;:77,
+            &quot;discount_price&quot;:59,
+            &quot;online&quot;:true,
+            &quot;img&quot;:&quot;http://i1.sleeve.7yue.pro/assets/09f32ac8-1af4-4424-b221-44b10bd0986e.png&quot;,
+            &quot;title&quot;:&quot;橘黄色·七龙珠&quot;,
+            &quot;spu_id&quot;:2,
+            &quot;category_id&quot;:17,
+            &quot;root_category_id&quot;:3,
+            &quot;specs&quot;:[
+                {
+                    &quot;key_id&quot;:1,
+                    &quot;key&quot;:&quot;颜色&quot;,
+                    &quot;value_id&quot;:44,
+                    &quot;value&quot;:&quot;橘黄色&quot;
+                },
+                {
+                    &quot;key_id&quot;:3,
+                    &quot;key&quot;:&quot;图案&quot;,
+                    &quot;value_id&quot;:9,
+                    &quot;value&quot;:&quot;七龙珠&quot;
+                },
+                {
+                    &quot;key_id&quot;:4,
+                    &quot;key&quot;:&quot;尺码&quot;,
+                    &quot;value_id&quot;:14,
+                    &quot;value&quot;:&quot;小号 S&quot;
+                }
+            ],
+            &quot;code&quot;:&quot;2$1-44#3-9#4-14&quot;,
+            &quot;stock&quot;:7
+        }
+    ],
+    &quot;spu_img_list&quot;:[
+        {
+            &quot;id&quot;:165,
+            &quot;img&quot;:&quot;http://i1.sleeve.7yue.pro/assets/5605cd6c-f869-46db-afe6-755b61a0122a.png&quot;,
+            &quot;spu_id&quot;:2
+        }
+    ],
+    &quot;spu_detail_img_list&quot;:[
+        {
+            &quot;id&quot;:24,
+            &quot;img&quot;:&quot;http://i2.sleeve.7yue.pro/n4.png&quot;,
+            &quot;spu_id&quot;:2,
+            &quot;index&quot;:1
+        }
+    ],
+    &quot;sketch_spec_id&quot;:1,
+    &quot;default_sku_id&quot;:2
+}
+</code></pre> <h3 id="服务器返回数据分析"><a href="#服务器返回数据分析" aria-hidden="true" class="header-anchor">#</a> 服务器返回数据分析</h3> <p>上面长长的一串数据就是一个商品页面的返回结果，我们先看spces(属性)，在sku_list中的specs中记录了每个SPU对应的sku规格值，从数据中我们可以看出，每个spu拥有3个规格值分别是颜色，图案，尺码，我们将每个SPU数据单独抽离出来可以得到：</p> <pre><code>金属灰 七龙珠 小号 S
+青芒色 灌篮高手 中号 M
+青芒色 圣斗士 大号 L
+橘黄色 七龙珠 小号 S
+</code></pre> <p>对比效果图<a href="/spu-preview.jpg">!Image</a>
+我们可以发现，这两玩意好像啊，不就是每一行读下来并且去重就是渲染所需要的数据了么？那么接下来，我们就想办法将数据换一换。</p> <h3 id="通过矩阵思想解决问题"><a href="#通过矩阵思想解决问题" aria-hidden="true" class="header-anchor">#</a> 通过矩阵思想解决问题</h3> <p>在大学的课程中我们学过矩阵，那么这样的变化不就是<strong>矩阵的转置</strong>么？把每一列变成行，就可以初步得到我们想要的数据渲染数组！</p> <pre><code>金属灰 青芒色 青芒色 橘黄色
+七龙珠 灌篮高手 圣斗士 七龙珠
+小号 中号 大号 小号
+</code></pre> <p>However,很遗憾，js中并没有提供矩阵的转置函数，所以，我们得自己实现矩阵的转置</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token comment">// 矩阵处理类</span>
+<span class="token keyword">class</span> <span class="token class-name">Matrix</span> <span class="token punctuation">{</span>
+    matrix
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">matrix</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>matrix <span class="token operator">=</span> matrix
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">get</span> <span class="token function">rowsNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>matrix<span class="token punctuation">.</span>length
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">get</span> <span class="token function">colsNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length
+    <span class="token punctuation">}</span>
+
+    <span class="token function">transpose</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> desArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>colsNum<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            desArr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>rowsNum<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                desArr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> desArr
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">{</span>
+    Matrix
+<span class="token punctuation">}</span>
+
+</code></pre></div></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">上次码字的时间吖: </span> <span class="time">1/14/2020, 8:50:43 AM</span></div></footer> <!----> <!----></main> <!----> <div class="comments-wrapper" data-v-4698c43e><!----></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a81d141e data-v-a81d141e><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a81d141e><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a81d141e></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a81d141e></path></svg></div></div></div>
+    <script src="/assets/js/app.242b641d.js" defer></script><script src="/assets/js/3.74c25131.js" defer></script><script src="/assets/js/1.ab049720.js" defer></script><script src="/assets/js/14.da42673f.js" defer></script>
   </body>
 </html>
