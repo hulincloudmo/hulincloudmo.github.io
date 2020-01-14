@@ -1,3 +1,13 @@
+--- 
+title: 如何创建blog？
+date: 2020-01-14 15:57:53
+categories: 
+ - 自动部署
+tags: 
+ - 部署blog
+---
+
+
 # 如何创建一个像我一样的blog
 
 :::: tip
@@ -6,6 +16,12 @@
  · 使用github的自定义域名功能将gitpage换到自己的域名上
  · 解决每次提交github时自定义域名会自动重置的问题
  · 使用TravisCI自动化部署更新博客
+ @flowstart
+ process=>operation: Operation
+ e=>end: End
+ 
+ process->e
+ @flowend
 ::::
 
 ## 获取vuepress[源码github地址](https://github.com/vuejs/vuepress)

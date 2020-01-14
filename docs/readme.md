@@ -1,6 +1,9 @@
 ---
 home: true
-heroImage: https://api.hulincloud.cn/vuepress/default-avatar.jpg
+bgImage: "/8.jpg"
+bgImageStyle: {
+  height: '28rem'
+}
 actionText: 开始 →
 actionLink: /guide/
 features:
