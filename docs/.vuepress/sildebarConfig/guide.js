@@ -14,6 +14,14 @@ let guide = [
     ]
   },
   {
+    title: "vue",
+    collapsable:false,
+    children:[
+      'vue/vue-response',
+      'vue/disorder-vue'
+    ]
+  },
+  {
     title: "Typescript",
     collapsable: false,
     children: [
