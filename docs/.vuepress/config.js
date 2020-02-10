@@ -1,7 +1,8 @@
 let {sidebar} = require('./sildebarConfig/core')
-
+let webpackConfig = require('./webpack.config')
 module.exports = {
   base: "",
+  port: 8085,
   title: '陌上青夏',
   theme: 'reco',
   description: '陌上花开，可缓缓归矣',
@@ -25,6 +26,7 @@ module.exports = {
       { text: '时间记忆', link: '/timeline/', icon: 'reco-date' }
 
     ],
-    sidebar: sidebar
+    sidebar: sidebar,
+    webpackChainFns: webpackConfig.chainWebpack
   }
 }

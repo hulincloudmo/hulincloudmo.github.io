@@ -25,14 +25,31 @@ let study = [
     title: "设计模式",
     collapsable:true,
     children: [
-      '/study/design-pattern/part-1'
+      '/study/design-pattern/part-1',
+      '/study/design-pattern/part-2'
+    ]
+  },
+  {
+    title: "webpack",
+    collapsable: false,
+    children: [
+      '/study/webpack/part-1'
+    ]
+  },
+  {
+    title: "vue相关",
+    collapsable: false,
+    children: [
+      '@study/source-code'
     ]
   },
   {
     title: "面试相关",
-    collapsable: true,
+    collapsable: false,
     children: [
-      '/study/offer/js'
+      '/study/offer/js',
+      '/study/offer/js-problem',
+      '/study/offer/vue'
     ]
   }
 ]

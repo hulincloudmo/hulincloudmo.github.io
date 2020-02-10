@@ -41,8 +41,10 @@ let guide = [
     title: "电商相关",
     collapsable: false,
     children: [
-      'electronic-commerce/spu-and-sku',
-      'electronic-commerce/spu-shop'
+      '@ele/spu-and-sku',
+      '@ele/spu-shop',
+      '@ele/spu-shop-2',
+      '@ele/spu-shop-3',
     ]
   },
   {
