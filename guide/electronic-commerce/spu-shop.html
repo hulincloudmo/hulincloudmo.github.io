@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>SKU和SPU的故事 | 陌上青夏</title>
+    <title>spu组件构建-1 | 陌上青夏</title>
     <meta name="description" content="陌上花开，可缓缓归矣">
     
     
-    <link rel="preload" href="/assets/css/0.styles.e091c57e.css" as="style"><link rel="preload" href="/assets/js/app.f71cc4e5.js" as="script"><link rel="preload" href="/assets/js/3.74c25131.js" as="script"><link rel="preload" href="/assets/js/1.ab049720.js" as="script"><link rel="preload" href="/assets/js/14.da42673f.js" as="script"><link rel="prefetch" href="/assets/js/10.1f7bd092.js"><link rel="prefetch" href="/assets/js/11.1b566ac0.js"><link rel="prefetch" href="/assets/js/12.554efd07.js"><link rel="prefetch" href="/assets/js/13.6ab62fe7.js"><link rel="prefetch" href="/assets/js/15.a5281c04.js"><link rel="prefetch" href="/assets/js/16.5c586515.js"><link rel="prefetch" href="/assets/js/17.3f2edcf9.js"><link rel="prefetch" href="/assets/js/18.bfdc366b.js"><link rel="prefetch" href="/assets/js/19.eb0a5adc.js"><link rel="prefetch" href="/assets/js/20.a36b3bb3.js"><link rel="prefetch" href="/assets/js/21.017955a6.js"><link rel="prefetch" href="/assets/js/22.7125580f.js"><link rel="prefetch" href="/assets/js/23.5d07087e.js"><link rel="prefetch" href="/assets/js/24.63a8c389.js"><link rel="prefetch" href="/assets/js/25.4fc8488c.js"><link rel="prefetch" href="/assets/js/26.90e49969.js"><link rel="prefetch" href="/assets/js/27.4a6a8a6b.js"><link rel="prefetch" href="/assets/js/28.a0104cf7.js"><link rel="prefetch" href="/assets/js/29.248e9c9e.js"><link rel="prefetch" href="/assets/js/30.d77725f0.js"><link rel="prefetch" href="/assets/js/31.e08e2668.js"><link rel="prefetch" href="/assets/js/32.b228f20b.js"><link rel="prefetch" href="/assets/js/33.7b7530a1.js"><link rel="prefetch" href="/assets/js/34.338b7e33.js"><link rel="prefetch" href="/assets/js/35.c5c057f8.js"><link rel="prefetch" href="/assets/js/36.a6c8862a.js"><link rel="prefetch" href="/assets/js/4.808c28fe.js"><link rel="prefetch" href="/assets/js/5.56318620.js"><link rel="prefetch" href="/assets/js/6.83e356ad.js"><link rel="prefetch" href="/assets/js/7.c4e45ebf.js"><link rel="prefetch" href="/assets/js/8.b8d30906.js"><link rel="prefetch" href="/assets/js/9.2cd52e9a.js">
+    <link rel="preload" href="/assets/css/0.styles.e091c57e.css" as="style"><link rel="preload" href="/assets/js/app.53bf5ed8.js" as="script"><link rel="preload" href="/assets/js/3.74c25131.js" as="script"><link rel="preload" href="/assets/js/1.ab049720.js" as="script"><link rel="preload" href="/assets/js/16.d480cc4d.js" as="script"><link rel="prefetch" href="/assets/js/10.1f7bd092.js"><link rel="prefetch" href="/assets/js/11.1b566ac0.js"><link rel="prefetch" href="/assets/js/12.554efd07.js"><link rel="prefetch" href="/assets/js/13.6ab62fe7.js"><link rel="prefetch" href="/assets/js/14.4aea6def.js"><link rel="prefetch" href="/assets/js/15.9c104527.js"><link rel="prefetch" href="/assets/js/17.f8acff45.js"><link rel="prefetch" href="/assets/js/18.3da9750e.js"><link rel="prefetch" href="/assets/js/19.3bef7768.js"><link rel="prefetch" href="/assets/js/20.d16fa0e5.js"><link rel="prefetch" href="/assets/js/21.6193b247.js"><link rel="prefetch" href="/assets/js/22.dbc26e18.js"><link rel="prefetch" href="/assets/js/23.40e26d53.js"><link rel="prefetch" href="/assets/js/24.62430563.js"><link rel="prefetch" href="/assets/js/25.af97411b.js"><link rel="prefetch" href="/assets/js/26.bce148b7.js"><link rel="prefetch" href="/assets/js/27.e07eb0f4.js"><link rel="prefetch" href="/assets/js/28.5661fe5d.js"><link rel="prefetch" href="/assets/js/29.22a27dbb.js"><link rel="prefetch" href="/assets/js/30.314eba1d.js"><link rel="prefetch" href="/assets/js/31.d142932d.js"><link rel="prefetch" href="/assets/js/32.6dfcd371.js"><link rel="prefetch" href="/assets/js/33.2454415d.js"><link rel="prefetch" href="/assets/js/34.791f9121.js"><link rel="prefetch" href="/assets/js/35.c11e8547.js"><link rel="prefetch" href="/assets/js/36.5a5dd39a.js"><link rel="prefetch" href="/assets/js/37.79db96fb.js"><link rel="prefetch" href="/assets/js/38.5d505276.js"><link rel="prefetch" href="/assets/js/39.37619896.js"><link rel="prefetch" href="/assets/js/4.808c28fe.js"><link rel="prefetch" href="/assets/js/40.fffb4de7.js"><link rel="prefetch" href="/assets/js/41.d29edad5.js"><link rel="prefetch" href="/assets/js/42.5e7a1425.js"><link rel="prefetch" href="/assets/js/43.a441b760.js"><link rel="prefetch" href="/assets/js/44.5c4d8714.js"><link rel="prefetch" href="/assets/js/45.4e455e4c.js"><link rel="prefetch" href="/assets/js/46.074c99c0.js"><link rel="prefetch" href="/assets/js/47.118666ea.js"><link rel="prefetch" href="/assets/js/48.72688a77.js"><link rel="prefetch" href="/assets/js/49.dbf4ffe2.js"><link rel="prefetch" href="/assets/js/5.56318620.js"><link rel="prefetch" href="/assets/js/50.298325dc.js"><link rel="prefetch" href="/assets/js/51.1e592392.js"><link rel="prefetch" href="/assets/js/52.cbb5a08d.js"><link rel="prefetch" href="/assets/js/53.fe665338.js"><link rel="prefetch" href="/assets/js/54.612f2cb9.js"><link rel="prefetch" href="/assets/js/6.83e356ad.js"><link rel="prefetch" href="/assets/js/7.c4e45ebf.js"><link rel="prefetch" href="/assets/js/8.b8d30906.js"><link rel="prefetch" href="/assets/js/9.fd9eeea6.js">
     <link rel="stylesheet" href="/assets/css/0.styles.e091c57e.css">
   </head>
   <body>
@@ -31,7 +31,7 @@
     GitHub
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask" data-v-4698c43e></div> <aside class="sidebar" data-v-4698c43e><div class="personal-info-wrapper" data-v-6c8ffc9c><img src="/default-avatar.jpg" alt="author-avatar" class="personal-img" data-v-6c8ffc9c> <h3 class="name" data-v-6c8ffc9c>
     陌上青夏
-  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>12</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>9</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>30</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>22</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
   首页
 </a></div><div class="nav-item"><a href="/guide/" class="nav-link router-link-active"><i class="iconfont reco-blog"></i>
   业务手记
@@ -45,179 +45,179 @@
   时间记忆
 </a></div> <a href="https://github.com/hulincloudmo/hulincloudmo.github.io" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
     GitHub
-    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>编程思想</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/code-style/code.html" class="sidebar-link">各类语言通用</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>javascript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/js/rubbish-recover.html" class="sidebar-link">JS的垃圾回收机制与闭包的使用</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>vue</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/vue/vue-response.html" class="sidebar-link">vue响应式数据更新</a></li><li><a href="/guide/vue/disorder-vue.html" class="sidebar-link">关于vue的一些小知识</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Typescript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/test.html" class="sidebar-link">安装 TypeScript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>微信小程序相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/miniprogram/scroll-view.html" class="sidebar-link">为什么我的scroll-view的高度会如此之高？</a></li><li><a href="/guide/miniprogram/loading.html" class="sidebar-link">loading状态的思考</a></li><li><a href="/guide/miniprogram/paging.html" class="sidebar-link">移动前端分页加载？</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>电商相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/electronic-commerce/spu-and-sku.html" class="sidebar-link">深入浅出SPU、SKU</a></li><li><a href="/guide/electronic-commerce/spu-shop.html" class="active sidebar-link">SKU和SPU的故事</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/electronic-commerce/spu-shop.html#开场白" class="sidebar-link">开场白</a></li><li class="sidebar-sub-header"><a href="/guide/electronic-commerce/spu-shop.html#服务器数据" class="sidebar-link">服务器数据</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>运维相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/operation/auto-CI.html" class="sidebar-link">自动化部署</a></li><li><a href="/guide/operation/create-your-blog.html" class="sidebar-link">如何创建blog？</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-6cbeab0a data-v-4698c43e><h3 class="title" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a>SKU和SPU的故事</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a><input type="password" value="" data-v-6cbeab0a> <span data-v-6cbeab0a>Konck! Knock!</span> <button data-v-6cbeab0a>OK</button></label> <div class="footer" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a><span data-v-6cbeab0a><i class="iconfont reco-theme" data-v-6cbeab0a></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-6cbeab0a>vuePress-theme-reco</a></span> <span data-v-6cbeab0a><i class="iconfont reco-copyright" data-v-6cbeab0a></i> <a data-v-6cbeab0a><span data-v-6cbeab0a>陌上青夏</span>
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>编程思想</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/code-style/code.html" class="sidebar-link">各类语言通用</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>javascript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/js/rubbish-recover.html" class="sidebar-link">JS的垃圾回收机制与闭包的使用</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>vue</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/vue/vue-response.html" class="sidebar-link">vue响应式数据更新</a></li><li><a href="/guide/vue/disorder-vue.html" class="sidebar-link">关于vue的一些小知识</a></li><li><a href="/guide/vue/v-model-custom.html" class="sidebar-link">自定义v-model</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Typescript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/test.html" class="sidebar-link">安装 TypeScript</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>微信小程序相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/miniprogram/scroll-view.html" class="sidebar-link">为什么我的scroll-view的高度会如此之高？</a></li><li><a href="/guide/miniprogram/loading.html" class="sidebar-link">loading状态的思考</a></li><li><a href="/guide/miniprogram/paging.html" class="sidebar-link">移动前端分页加载？</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>电商相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/electronic-commerce/spu-and-sku.html" class="sidebar-link">深入浅出SPU、SKU</a></li><li><a href="/guide/electronic-commerce/spu-shop.html" class="active sidebar-link">spu组件构建-1</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/electronic-commerce/spu-shop.html#开场白" class="sidebar-link">开场白</a></li><li class="sidebar-sub-header"><a href="/guide/electronic-commerce/spu-shop.html#服务器数据" class="sidebar-link">服务器数据</a></li></ul></li><li><a href="/guide/electronic-commerce/spu-shop-2.html" class="sidebar-link">spu组件构建-2</a></li><li><a href="/guide/electronic-commerce/spu-shop-3.html" class="sidebar-link">spu组件构建-3</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>运维相关</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/operation/auto-CI.html" class="sidebar-link">自动化部署</a></li><li><a href="/guide/operation/create-your-blog.html" class="sidebar-link">如何创建blog？</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-6cbeab0a data-v-4698c43e><h3 class="title" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a>spu组件构建-1</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a><input type="password" value="" data-v-6cbeab0a> <span data-v-6cbeab0a>Konck! Knock!</span> <button data-v-6cbeab0a>OK</button></label> <div class="footer" style="display:none;" data-v-6cbeab0a data-v-6cbeab0a><span data-v-6cbeab0a><i class="iconfont reco-theme" data-v-6cbeab0a></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-6cbeab0a>vuePress-theme-reco</a></span> <span data-v-6cbeab0a><i class="iconfont reco-copyright" data-v-6cbeab0a></i> <a data-v-6cbeab0a><span data-v-6cbeab0a>陌上青夏</span>
             
           <!---->
           2020
-        </a></span></div></div> <div data-v-4698c43e><main class="page"><!----> <div class="page-title" style="display:none;"><h1>SKU和SPU的故事</h1> <hr> <div data-v-484a899e><i class="iconfont reco-account" data-v-484a899e><span data-v-484a899e>陌上青夏</span></i> <i class="iconfont reco-date" data-v-484a899e><span data-v-484a899e>2020-01-14 16:00:18</span></i> <!----> <i class="iconfont reco-tag tags" data-v-484a899e><span class="tag-item" data-v-484a899e>
-      组件实践
-    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h1 id="微信小程序编写一个高面向对象的规格选择-spu-组件"><a href="#微信小程序编写一个高面向对象的规格选择-spu-组件" aria-hidden="true" class="header-anchor">#</a> 微信小程序编写一个高面向对象的规格选择(SPU)组件</h1> <h2 id="开场白"><a href="#开场白" aria-hidden="true" class="header-anchor">#</a> 开场白</h2> <p>本文开始将介绍如何使用微信小程序实现一个完美的，面向对象的SPU组件，因为代码较多，最后将会提供github源码链接供大家参考！</p> <p>效果图<a href="/spu-preview.jpg">!Image</a></p> <h2 id="服务器数据"><a href="#服务器数据" aria-hidden="true" class="header-anchor">#</a> 服务器数据</h2> <p>我们首先先看看服务器所返回的数据结构</p> <pre><code> {
-    &quot;id&quot;:2,
-    &quot;title&quot;:&quot;林间有风自营针织衫&quot;,
-    &quot;subtitle&quot;:&quot;瓜瓜设计，3件包邮&quot;,
-    &quot;category_id&quot;:12,
-    &quot;root_category_id&quot;:2,
-    &quot;price&quot;:&quot;77.00&quot;,
-    &quot;img&quot;:&quot;&quot;,
-    &quot;for_theme_img&quot;:&quot;&quot;,
-    &quot;description&quot;:null,
-    &quot;discount_price&quot;:&quot;62.00&quot;,
-    &quot;tags&quot;:&quot;包邮$热门&quot;,
-    &quot;is_test&quot;:true,
-    &quot;online&quot;:true,
-    &quot;sku_list&quot;:[
-        {
-            &quot;id&quot;:2,
-            &quot;price&quot;:77.76,
-            &quot;discount_price&quot;:null,
-            &quot;online&quot;:true,
-            &quot;img&quot;:&quot;&quot;,
-            &quot;title&quot;:&quot;金属灰·七龙珠&quot;,
-            &quot;spu_id&quot;:2,
-            &quot;category_id&quot;:17,
-            &quot;root_category_id&quot;:3,
-            &quot;specs&quot;:[
-                {
-                    &quot;key_id&quot;:1,
-                    &quot;key&quot;:&quot;颜色&quot;,
-                    &quot;value_id&quot;:45,
-                    &quot;value&quot;:&quot;金属灰&quot;
-                },
-                {
-                    &quot;key_id&quot;:3,
-                    &quot;key&quot;:&quot;图案&quot;,
-                    &quot;value_id&quot;:9,
-                    &quot;value&quot;:&quot;七龙珠&quot;
-                },
-                {
-                    &quot;key_id&quot;:4,
-                    &quot;key&quot;:&quot;尺码&quot;,
-                    &quot;value_id&quot;:14,
-                    &quot;value&quot;:&quot;小号 S&quot;
-                }
-            ],
-            &quot;code&quot;:&quot;2$1-45#3-9#4-14&quot;,
-            &quot;stock&quot;:5
-        },
-        {
-            &quot;id&quot;:3,
-            &quot;price&quot;:66,
-            &quot;discount_price&quot;:59,
-            &quot;online&quot;:true,
-            &quot;img&quot;:&quot;&quot;,
-            &quot;title&quot;:&quot;青芒色·灌篮高手&quot;,
-            &quot;spu_id&quot;:2,
-            &quot;category_id&quot;:17,
-            &quot;root_category_id&quot;:3,
-            &quot;specs&quot;:[
-                {
-                    &quot;key_id&quot;:1,
-                    &quot;key&quot;:&quot;颜色&quot;,
-                    &quot;value_id&quot;:42,
-                    &quot;value&quot;:&quot;青芒色&quot;
-                },
-                {
-                    &quot;key_id&quot;:3,
-                    &quot;key&quot;:&quot;图案&quot;,
-                    &quot;value_id&quot;:10,
-                    &quot;value&quot;:&quot;灌篮高手&quot;
-                },
-                {
-                    &quot;key_id&quot;:4,
-                    &quot;key&quot;:&quot;尺码&quot;,
-                    &quot;value_id&quot;:15,
-                    &quot;value&quot;:&quot;中号 M&quot;
-                }
-            ],
-            &quot;code&quot;:&quot;2$1-42#3-10#4-15&quot;,
-            &quot;stock&quot;:999
-        },
-        {
-            &quot;id&quot;:4,
-            &quot;price&quot;:88,
-            &quot;discount_price&quot;:null,
-            &quot;online&quot;:true,
-            &quot;img&quot;:&quot;&quot;,
-            &quot;title&quot;:&quot;青芒色·圣斗士&quot;,
-            &quot;spu_id&quot;:2,
-            &quot;category_id&quot;:17,
-            &quot;root_category_id&quot;:3,
-            &quot;specs&quot;:[
-                {
-                    &quot;key_id&quot;:1,
-                    &quot;key&quot;:&quot;颜色&quot;,
-                    &quot;value_id&quot;:42,
-                    &quot;value&quot;:&quot;青芒色&quot;
-                },
-                {
-                    &quot;key_id&quot;:3,
-                    &quot;key&quot;:&quot;图案&quot;,
-                    &quot;value_id&quot;:11,
-                    &quot;value&quot;:&quot;圣斗士&quot;
-                },
-                {
-                    &quot;key_id&quot;:4,
-                    &quot;key&quot;:&quot;尺码&quot;,
-                    &quot;value_id&quot;:16,
-                    &quot;value&quot;:&quot;大号  L&quot;
-                }
-            ],
-            &quot;code&quot;:&quot;2$1-42#3-11#4-16&quot;,
-            &quot;stock&quot;:8
-        },
-        {
-            &quot;id&quot;:5,
-            &quot;price&quot;:77,
-            &quot;discount_price&quot;:59,
-            &quot;online&quot;:true,
-            &quot;img&quot;:&quot;http://i1.sleeve.7yue.pro/assets/09f32ac8-1af4-4424-b221-44b10bd0986e.png&quot;,
-            &quot;title&quot;:&quot;橘黄色·七龙珠&quot;,
-            &quot;spu_id&quot;:2,
-            &quot;category_id&quot;:17,
-            &quot;root_category_id&quot;:3,
-            &quot;specs&quot;:[
-                {
-                    &quot;key_id&quot;:1,
-                    &quot;key&quot;:&quot;颜色&quot;,
-                    &quot;value_id&quot;:44,
-                    &quot;value&quot;:&quot;橘黄色&quot;
-                },
-                {
-                    &quot;key_id&quot;:3,
-                    &quot;key&quot;:&quot;图案&quot;,
-                    &quot;value_id&quot;:9,
-                    &quot;value&quot;:&quot;七龙珠&quot;
-                },
-                {
-                    &quot;key_id&quot;:4,
-                    &quot;key&quot;:&quot;尺码&quot;,
-                    &quot;value_id&quot;:14,
-                    &quot;value&quot;:&quot;小号 S&quot;
-                }
-            ],
-            &quot;code&quot;:&quot;2$1-44#3-9#4-14&quot;,
-            &quot;stock&quot;:7
-        }
-    ],
-    &quot;spu_img_list&quot;:[
-        {
-            &quot;id&quot;:165,
-            &quot;img&quot;:&quot;http://i1.sleeve.7yue.pro/assets/5605cd6c-f869-46db-afe6-755b61a0122a.png&quot;,
-            &quot;spu_id&quot;:2
-        }
-    ],
-    &quot;spu_detail_img_list&quot;:[
-        {
-            &quot;id&quot;:24,
-            &quot;img&quot;:&quot;http://i2.sleeve.7yue.pro/n4.png&quot;,
-            &quot;spu_id&quot;:2,
-            &quot;index&quot;:1
-        }
-    ],
-    &quot;sketch_spec_id&quot;:1,
-    &quot;default_sku_id&quot;:2
-}
-</code></pre> <h3 id="服务器返回数据分析"><a href="#服务器返回数据分析" aria-hidden="true" class="header-anchor">#</a> 服务器返回数据分析</h3> <p>上面长长的一串数据就是一个商品页面的返回结果，我们先看spces(属性)，在sku_list中的specs中记录了每个SPU对应的sku规格值，从数据中我们可以看出，每个spu拥有3个规格值分别是颜色，图案，尺码，我们将每个SPU数据单独抽离出来可以得到：</p> <pre><code>金属灰 七龙珠 小号 S
+        </a></span></div></div> <div data-v-4698c43e><main class="page"><!----> <div class="page-title" style="display:none;"><h1>spu组件构建-1</h1> <hr> <div data-v-484a899e><i class="iconfont reco-account" data-v-484a899e><span data-v-484a899e>陌上青夏</span></i> <i class="iconfont reco-date" data-v-484a899e><span data-v-484a899e>2020-01-14 16:00:18</span></i> <!----> <i class="iconfont reco-tag tags" data-v-484a899e><span class="tag-item" data-v-484a899e>
+      SKU-SPU组件构建之旅
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h1 id="微信小程序编写一个高面向对象的规格选择-spu-组件"><a href="#微信小程序编写一个高面向对象的规格选择-spu-组件" aria-hidden="true" class="header-anchor">#</a> 微信小程序编写一个高面向对象的规格选择(SPU)组件</h1> <h2 id="开场白"><a href="#开场白" aria-hidden="true" class="header-anchor">#</a> 开场白</h2> <p>本文开始将介绍如何使用微信小程序实现一个完美的，面向对象的SPU组件，因为代码较多，本文主要介绍构建思路，最后将会提供github源码链接供大家参考！</p> <p><strong>效果图</strong></p> <p><img src="/spu-preview.jpg" alt="Image text"></p> <h2 id="服务器数据"><a href="#服务器数据" aria-hidden="true" class="header-anchor">#</a> 服务器数据</h2> <p>我们首先先看看服务器所返回的数据结构</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;title&quot;</span><span class="token operator">:</span><span class="token string">&quot;林间有风自营针织衫&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;subtitle&quot;</span><span class="token operator">:</span><span class="token string">&quot;瓜瓜设计，3件包邮&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;category_id&quot;</span><span class="token operator">:</span><span class="token number">12</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;root_category_id&quot;</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;price&quot;</span><span class="token operator">:</span><span class="token string">&quot;77.00&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;img&quot;</span><span class="token operator">:</span><span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;for_theme_img&quot;</span><span class="token operator">:</span><span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;description&quot;</span><span class="token operator">:</span><span class="token null keyword">null</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;discount_price&quot;</span><span class="token operator">:</span><span class="token string">&quot;62.00&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;tags&quot;</span><span class="token operator">:</span><span class="token string">&quot;包邮$热门&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;is_test&quot;</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;online&quot;</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;sku_list&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">&quot;id&quot;</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;price&quot;</span><span class="token operator">:</span><span class="token number">77.76</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;discount_price&quot;</span><span class="token operator">:</span><span class="token null keyword">null</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;online&quot;</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;img&quot;</span><span class="token operator">:</span><span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;title&quot;</span><span class="token operator">:</span><span class="token string">&quot;金属灰·七龙珠&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;spu_id&quot;</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;category_id&quot;</span><span class="token operator">:</span><span class="token number">17</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;root_category_id&quot;</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;specs&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;key_id&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;key&quot;</span><span class="token operator">:</span><span class="token string">&quot;颜色&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value_id&quot;</span><span class="token operator">:</span><span class="token number">45</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value&quot;</span><span class="token operator">:</span><span class="token string">&quot;金属灰&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;key_id&quot;</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;key&quot;</span><span class="token operator">:</span><span class="token string">&quot;图案&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value_id&quot;</span><span class="token operator">:</span><span class="token number">9</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value&quot;</span><span class="token operator">:</span><span class="token string">&quot;七龙珠&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;key_id&quot;</span><span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;key&quot;</span><span class="token operator">:</span><span class="token string">&quot;尺码&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value_id&quot;</span><span class="token operator">:</span><span class="token number">14</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value&quot;</span><span class="token operator">:</span><span class="token string">&quot;小号 S&quot;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;code&quot;</span><span class="token operator">:</span><span class="token string">&quot;2$1-45#3-9#4-14&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;stock&quot;</span><span class="token operator">:</span><span class="token number">5</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">&quot;id&quot;</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;price&quot;</span><span class="token operator">:</span><span class="token number">66</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;discount_price&quot;</span><span class="token operator">:</span><span class="token number">59</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;online&quot;</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;img&quot;</span><span class="token operator">:</span><span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;title&quot;</span><span class="token operator">:</span><span class="token string">&quot;青芒色·灌篮高手&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;spu_id&quot;</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;category_id&quot;</span><span class="token operator">:</span><span class="token number">17</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;root_category_id&quot;</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;specs&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;key_id&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;key&quot;</span><span class="token operator">:</span><span class="token string">&quot;颜色&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value_id&quot;</span><span class="token operator">:</span><span class="token number">42</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value&quot;</span><span class="token operator">:</span><span class="token string">&quot;青芒色&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;key_id&quot;</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;key&quot;</span><span class="token operator">:</span><span class="token string">&quot;图案&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value_id&quot;</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value&quot;</span><span class="token operator">:</span><span class="token string">&quot;灌篮高手&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;key_id&quot;</span><span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;key&quot;</span><span class="token operator">:</span><span class="token string">&quot;尺码&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value_id&quot;</span><span class="token operator">:</span><span class="token number">15</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value&quot;</span><span class="token operator">:</span><span class="token string">&quot;中号 M&quot;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;code&quot;</span><span class="token operator">:</span><span class="token string">&quot;2$1-42#3-10#4-15&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;stock&quot;</span><span class="token operator">:</span><span class="token number">999</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">&quot;id&quot;</span><span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;price&quot;</span><span class="token operator">:</span><span class="token number">88</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;discount_price&quot;</span><span class="token operator">:</span><span class="token null keyword">null</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;online&quot;</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;img&quot;</span><span class="token operator">:</span><span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;title&quot;</span><span class="token operator">:</span><span class="token string">&quot;青芒色·圣斗士&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;spu_id&quot;</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;category_id&quot;</span><span class="token operator">:</span><span class="token number">17</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;root_category_id&quot;</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;specs&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;key_id&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;key&quot;</span><span class="token operator">:</span><span class="token string">&quot;颜色&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value_id&quot;</span><span class="token operator">:</span><span class="token number">42</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value&quot;</span><span class="token operator">:</span><span class="token string">&quot;青芒色&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;key_id&quot;</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;key&quot;</span><span class="token operator">:</span><span class="token string">&quot;图案&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value_id&quot;</span><span class="token operator">:</span><span class="token number">11</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value&quot;</span><span class="token operator">:</span><span class="token string">&quot;圣斗士&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;key_id&quot;</span><span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;key&quot;</span><span class="token operator">:</span><span class="token string">&quot;尺码&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value_id&quot;</span><span class="token operator">:</span><span class="token number">16</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value&quot;</span><span class="token operator">:</span><span class="token string">&quot;大号  L&quot;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;code&quot;</span><span class="token operator">:</span><span class="token string">&quot;2$1-42#3-11#4-16&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;stock&quot;</span><span class="token operator">:</span><span class="token number">8</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">&quot;id&quot;</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;price&quot;</span><span class="token operator">:</span><span class="token number">77</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;discount_price&quot;</span><span class="token operator">:</span><span class="token number">59</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;online&quot;</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;img&quot;</span><span class="token operator">:</span><span class="token string">&quot;http://i1.sleeve.7yue.pro/assets/09f32ac8-1af4-4424-b221-44b10bd0986e.png&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;title&quot;</span><span class="token operator">:</span><span class="token string">&quot;橘黄色·七龙珠&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;spu_id&quot;</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;category_id&quot;</span><span class="token operator">:</span><span class="token number">17</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;root_category_id&quot;</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;specs&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;key_id&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;key&quot;</span><span class="token operator">:</span><span class="token string">&quot;颜色&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value_id&quot;</span><span class="token operator">:</span><span class="token number">44</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value&quot;</span><span class="token operator">:</span><span class="token string">&quot;橘黄色&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;key_id&quot;</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;key&quot;</span><span class="token operator">:</span><span class="token string">&quot;图案&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value_id&quot;</span><span class="token operator">:</span><span class="token number">9</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value&quot;</span><span class="token operator">:</span><span class="token string">&quot;七龙珠&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;key_id&quot;</span><span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;key&quot;</span><span class="token operator">:</span><span class="token string">&quot;尺码&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value_id&quot;</span><span class="token operator">:</span><span class="token number">14</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;value&quot;</span><span class="token operator">:</span><span class="token string">&quot;小号 S&quot;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;code&quot;</span><span class="token operator">:</span><span class="token string">&quot;2$1-44#3-9#4-14&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;stock&quot;</span><span class="token operator">:</span><span class="token number">7</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;spu_img_list&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">&quot;id&quot;</span><span class="token operator">:</span><span class="token number">165</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;img&quot;</span><span class="token operator">:</span><span class="token string">&quot;http://i1.sleeve.7yue.pro/assets/5605cd6c-f869-46db-afe6-755b61a0122a.png&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;spu_id&quot;</span><span class="token operator">:</span><span class="token number">2</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;spu_detail_img_list&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">&quot;id&quot;</span><span class="token operator">:</span><span class="token number">24</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;img&quot;</span><span class="token operator">:</span><span class="token string">&quot;http://i2.sleeve.7yue.pro/n4.png&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;spu_id&quot;</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;index&quot;</span><span class="token operator">:</span><span class="token number">1</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;sketch_spec_id&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;default_sku_id&quot;</span><span class="token operator">:</span><span class="token number">2</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><h3 id="服务器返回数据分析"><a href="#服务器返回数据分析" aria-hidden="true" class="header-anchor">#</a> 服务器返回数据分析</h3> <p>上面长长的一串数据就是一个商品页面的返回结果，我们先看spces(属性)，在sku_list中的specs中记录了每个SPU对应的sku规格值，从数据中我们可以看出，每个spu拥有3个规格值分别是颜色，图案，尺码，我们将每个SPU数据单独抽离出来可以得到：</p> <pre><code>金属灰 七龙珠 小号 S
 青芒色 灌篮高手 中号 M
 青芒色 圣斗士 大号 L
 橘黄色 七龙珠 小号 S
@@ -257,7 +257,7 @@
     Matrix
 <span class="token punctuation">}</span>
 
-</code></pre></div></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">上次码字的时间吖: </span> <span class="time">1/14/2020, 8:50:43 AM</span></div></footer> <!----> <!----></main> <!----> <div class="comments-wrapper" data-v-4698c43e><!----></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a81d141e data-v-a81d141e><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a81d141e><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a81d141e></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a81d141e></path></svg></div></div></div>
-    <script src="/assets/js/app.f71cc4e5.js" defer></script><script src="/assets/js/3.74c25131.js" defer></script><script src="/assets/js/1.ab049720.js" defer></script><script src="/assets/js/14.da42673f.js" defer></script>
+</code></pre></div><p>通过上面的转换，我们最终得到了符合渲染要求的数组，下一章我们来开始构建SKU组件</p></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">上次码字的时间吖: </span> <span class="time">2/10/2020, 9:56:30 AM</span></div></footer> <!----> <!----></main> <!----> <div class="comments-wrapper" data-v-4698c43e><!----></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a81d141e data-v-a81d141e><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a81d141e><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a81d141e></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a81d141e></path></svg></div></div></div>
+    <script src="/assets/js/app.53bf5ed8.js" defer></script><script src="/assets/js/3.74c25131.js" defer></script><script src="/assets/js/1.ab049720.js" defer></script><script src="/assets/js/16.d480cc4d.js" defer></script>
   </body>
 </html>
