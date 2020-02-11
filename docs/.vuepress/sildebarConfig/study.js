@@ -40,7 +40,15 @@ let study = [
     title: "vue相关",
     collapsable: false,
     children: [
-      '@study/source-code'
+      '/study/vue/source-code/part-1',
+      '/study/vue/part-1',
+      '/study/vue/part-2',
+      '/study/vue/part-3',
+      '/study/vue/part-4',
+      '/study/vue/part-5',
+      '/study/vue/part-6',
+      '/study/vue/part-7',
+      '/study/vue/part-8',
     ]
   },
   {
@@ -49,7 +57,7 @@ let study = [
     children: [
       '/study/offer/js',
       '/study/offer/js-problem',
-      '/study/offer/vue'
+      '/study/offer/vue/problem',
     ]
   }
 ]

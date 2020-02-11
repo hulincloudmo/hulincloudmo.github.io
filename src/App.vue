@@ -1,28 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <p>双向动态绑定</p>
+    <p>{{name}}</p>
+    <custom-v-model v-model="name"></custom-v-model>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import customVModel from "@/components/custom-v-model"
 export default {
   name: 'app',
+  data() {
+    return {
+      name: "陌上青夏",
+      message: ""
+    }
+  },
   components: {
-    HelloWorld
+    customVModel
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

@@ -18,7 +18,8 @@ let guide = [
     collapsable:false,
     children:[
       'vue/vue-response',
-      'vue/disorder-vue'
+      'vue/disorder-vue',
+      'vue/v-model-custom'
     ]
   },
   {
@@ -41,10 +42,10 @@ let guide = [
     title: "电商相关",
     collapsable: false,
     children: [
-      '@ele/spu-and-sku',
-      '@ele/spu-shop',
-      '@ele/spu-shop-2',
-      '@ele/spu-shop-3',
+      'electronic-commerce/spu-and-sku',
+      'electronic-commerce/spu-shop',
+      'electronic-commerce/spu-shop-2',
+      'electronic-commerce/spu-shop-3',
     ]
   },
   {
