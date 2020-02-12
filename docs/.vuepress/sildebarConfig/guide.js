@@ -35,7 +35,8 @@ let guide = [
     children: [
       'miniprogram/scroll-view',
       'miniprogram/loading',
-      'miniprogram/paging'
+      'miniprogram/paging',
+      'miniprogram/mini-diff-vue'
     ]
   },
   {

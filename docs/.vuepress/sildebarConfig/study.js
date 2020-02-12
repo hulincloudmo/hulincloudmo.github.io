@@ -52,6 +52,18 @@ let study = [
     ]
   },
   {
+    title: "react相关",
+    collapsable:false,
+    children: [
+      '/study/react/readme',
+      '/study/react/part-1',
+      '/study/react/part-2',
+      
+      '/study/react/part-3',
+    ]
+  }
+  ,
+  {
     title: "面试相关",
     collapsable: false,
     children: [
