@@ -6,7 +6,6 @@ categories:
 tags: 
  - 小知识
 ---
-# 关于vue的一些小知识
 
 ## 一、让watch在第一次变化就监听
 

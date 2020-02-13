@@ -21,3 +21,5 @@ tags:
 {/*子组件调用*/}
 this.props.deleteItem(this.props.index)
 ```
+
+

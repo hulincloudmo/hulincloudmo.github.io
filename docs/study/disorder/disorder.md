@@ -10,7 +10,7 @@ tags:
 
 ## js
 
-### 一.js的new Date("2019-1-1")结果出来会少一天 
+### 一.js的new Date("2019-1-1")结果出来会少一天
 ```javascript
 console.log(new Date("2019-1-2"))
 // 2019-01-01T16:00:00.000Z
