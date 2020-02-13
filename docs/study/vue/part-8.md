@@ -4,7 +4,7 @@ date: 2020-02-10 22:48
 categories: 
  - vue
 tags: 
- - vue高级原理
+ - vue高级原理、虚拟DOM
 ---
 
 <!-- more -->
@@ -64,6 +64,7 @@ const arrProto = Object.create(oldArrayProperty)
 - vdom是实现vue和React的重要基石
 - diff算法是vdom中最核心、最关键的部分
 - vdom就是找出需要修改的最小部分
+- 虚拟DOM实际上就是一个js对象
 :::
 
 ### ① 背景
@@ -72,7 +73,7 @@ const arrProto = Object.create(oldArrayProperty)
 - vue和React都是数据驱动视图
 
 ### ② 用js模仿DOM
-
+`vue中生成树`
 ![image text](/vdom.png)
 
 ## 五、diff算法
@@ -80,6 +81,18 @@ const arrProto = Object.create(oldArrayProperty)
 树的时间复杂度是O（n^3)
 
 ### ① 我们一直在循环中用的key
+
+::: danger
+不要使用循环的index作为key，这样会导致key值不稳定，也就失去了意义
+:::
+
+```text
+a 0          b 0
+b 1  删除a=>  c 1
+c 2
+```
+
+上述例子中，key值是不稳定的，当key变化时，就会出发DOM的重新渲染
 
 
 

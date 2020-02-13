@@ -58,6 +58,9 @@ let study = [
       '/study/react/part-1',
       '/study/react/part-2',
       '/study/react/part-3',
+      '/study/react/disorder',
+      '/study/react/vDom',
+      '/study/react/lifeTime',
     ]
   }
   ,

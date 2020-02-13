@@ -3,7 +3,7 @@ let webpackConfig = require('./webpack.config')
 module.exports = {
   base: "",
   port: 8085,
-  title: '陌上青夏',
+  title: '墨墨 lee',
   theme: 'reco',
   description: '陌上花开，可缓缓归矣',
   plugin: ['flowchart'],
