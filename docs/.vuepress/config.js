@@ -20,7 +20,10 @@ module.exports = {
     nav: [
       { text: '首页', link: '/',icon: 'reco-home' },
       { text: '业务手记', link: '/guide/',icon:"reco-blog" },
-      { text: '理论也很重要吖',link: "/study/",icon: "reco-coding" },
+      { text: '理论也很重要吖',link: "/study/",icon: "reco-coding",items: [
+          { text: 'react知识', link: '/study/react/part-1' },
+          { text: 'vue知识', link: '/study/vue/part-1' }
+        ] },
       { text: '心情笔录', link: '/mood/',icon: "reco-suggestion" },
       { text: '个人简历', link:'/resume/',icon: "reco-eye"},
       { text: '时间记忆', link: '/timeline/', icon: 'reco-date' }

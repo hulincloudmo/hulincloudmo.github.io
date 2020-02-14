@@ -1,9 +1,11 @@
 let guide = [
   {
-    title: "编程思想",
+    title: "坑坑坑",
     collapsable: false,
     children: [
-      'code-style/code'
+      'code-style/code',
+      'code-style/browser-fix',
+      'code-style/js-code'
     ]
   },
   {

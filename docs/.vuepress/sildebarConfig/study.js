@@ -61,6 +61,8 @@ let study = [
       '/study/react/disorder',
       '/study/react/vDom',
       '/study/react/lifeTime',
+      '/study/react/redux',
+      '/study/react/idea',
     ]
   }
   ,
