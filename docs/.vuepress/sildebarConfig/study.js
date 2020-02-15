@@ -63,6 +63,8 @@ let study = [
       '/study/react/lifeTime',
       '/study/react/redux',
       '/study/react/idea',
+      '/study/react/redux-middleware',
+
     ]
   }
   ,

@@ -138,6 +138,24 @@ export default connect(mapStateToProps,mapDispatchToProps)(App);
 
 // export default App
 
+// reducer
+
+const defaultState = {
+    value: "hello world"
+}
+
+export default (state = defaultState,action)=> {
+    console.log(action)
+    if (action.type === "change") {
+
+        // 注意这里一定要copy一个对象，不能直接对state修改，否则redux永远不能追踪到state的变化
+
+        let newState = JSON.parse(JSON.stringify(state))
+        newState.value = action.value
+        return newState
+    }
+    return state
+}
 
 ```
 
