@@ -55,12 +55,40 @@ xhr.onreadystatechange = function() {
 }
 ```
 
-- 什么是同源策略
+### 什么是同源策略
 浏览器要求当前网页和Server必须同源（协议，域名，端口，三者必须一致），但加载图片，css，js是可以无视同源策略的
 
 利用无视同源策略特性： 使用图片实现打点
 
-JSONP: 使用script标签来传递信息，将参数写在请求地址上，写好jsonp返回函数的callback函数名
+### JSONP是什么？
+ 使用script标签来传递信息，将参数写在请求地址上，写好jsonp返回函数的callback函数名
+
+
+## 何时需要使用beforeDestory
+
+- 解绑自定义事件 `event.$off` => **不解绑容易造成内存泄漏**
+
+- 清除定时器 => **不解绑容易造成内存泄漏**
+
+- 解绑自定义DOM事件，如window，scroll => **不解绑容易造成内存泄漏**
+
+## Vue的action和mutation有何区别
+
+- action中处理异步，mutation不可以
+
+- mutation中做原子操作
+
+- action可以整合多个mutation
+
+## 响应式原理
+
+- 监听data
+
+- 组件渲染、更新过程
+
+
+
+
 
 
 

@@ -11,11 +11,13 @@
 import customVModel from "@/components/custom-v-model"
 export default {
   name: 'app',
-  data() {
+  data () {
     return {
-      name: "陌上青夏",
-      message: ""
+      name: '陌上青夏',
+      message: ''
     }
+  },
+  beforeDestroy() {
   },
   components: {
     customVModel
