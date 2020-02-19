@@ -1,6 +1,6 @@
 ---
 title: spu组件构建-2
-date: 2020-02-05 23:09
+date: 2020/02/05 23:09
 categories: 
  - 电商
 tags: 

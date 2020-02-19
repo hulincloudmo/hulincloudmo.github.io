@@ -1,6 +1,6 @@
 ---
 title: $nextTick
-date: 2020-02-10 21:40
+date: 2020/02/10 21:40
 categories: 
  - vue
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: 异步加载与keep-alive
-date: 2020-02-10 22:31
+date: 2020/02/10 22:31
 categories: 
  - vue
 tags: 

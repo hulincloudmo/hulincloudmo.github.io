@@ -1,6 +1,6 @@
 ---
 title: vue高级原理
-date: 2020-02-10 22:48
+date: 2020/02/10 22:48
 categories: 
  - vue
 tags: 

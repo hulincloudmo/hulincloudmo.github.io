@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'custom-v-model',
+    name: 'custom-v-model',
   model: {
     prop: 'text',
     event: 'change'

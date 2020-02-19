@@ -20,3 +20,23 @@ tags:
 
 <<<@/docs/study/offer/code-2.ts
 
+::: tip
+下列代码输出的对象原型链分别是什么？
+:::
+
+```js
+let obj = {
+    fun: function () {
+        console.log(this)
+    }
+}
+
+obj.fun()
+
+var fun = obj.fun
+fun()
+
+```
+
+答：第一个是在对象中，而第二个是在window中，**函数在哪里执行，this就指向哪里**
+

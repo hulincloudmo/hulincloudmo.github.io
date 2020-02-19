@@ -1,6 +1,6 @@
 ---
 title: mixins(混入)
-date: 2020-02-10 22:38
+date: 2020/02/10 22:38
 categories: 
  - vue
 tags: 

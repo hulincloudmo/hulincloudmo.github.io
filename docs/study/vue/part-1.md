@@ -1,6 +1,6 @@
 ---
 title: Vue组件的使用
-date: 2020-02-10 18:10
+date: 2020/02/10 18:10
 categories: 
  - vue
 tags: 
