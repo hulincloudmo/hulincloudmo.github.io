@@ -1,4 +1,4 @@
-let {sidebar} = require('./sildebarConfig/core')
+let {sidebar} = require('./slide-bar-config/core')
 let webpackConfig = require('./webpack.config')
 module.exports = {
   base: "",
@@ -30,6 +30,7 @@ module.exports = {
 
     ],
     sidebar: sidebar,
-    webpackChainFns: webpackConfig.chainWebpack
+    sidebarDepth:2,
+    // webpackChainFns: webpackConfig.chainWebpack
   }
 }

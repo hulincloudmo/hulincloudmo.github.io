@@ -1,3 +1,5 @@
+const {getChildren} = require("./slidebar-children-generate")
+
 let study = [
   {
     title: "小知识",
@@ -23,7 +25,7 @@ let study = [
   },
   {
     title: "设计模式",
-    collapsable:true,
+    collapsable:false,
     children: [
       '/study/design-pattern/part-1',
       '/study/design-pattern/part-2'
@@ -39,31 +41,12 @@ let study = [
   {
     title: "vue相关",
     collapsable: false,
-    children: [
-      '/study/vue/source-code/part-1',
-      '/study/vue/part-1',
-      '/study/vue/part-2',
-      '/study/vue/part-3',
-      '/study/vue/part-4',
-      '/study/vue/part-5',
-      '/study/vue/part-6',
-      '/study/vue/part-7',
-      '/study/vue/part-8',
-    ]
+    children: getChildren('docs/study/vue/')
   },
   {
     title: "react相关",
     collapsable:false,
-    children: [
-      '/study/react/part-1',
-      '/study/react/part-2',
-      '/study/react/part-3',
-      '/study/react/disorder',
-      '/study/react/vDom',
-      '/study/react/lifeTime',
-      '/study/react/redux',
-      '/study/react/idea',
-    ]
+    children: getChildren('docs/study/react/')
   }
   ,
   {

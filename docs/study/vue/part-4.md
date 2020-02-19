@@ -1,6 +1,6 @@
 ---
 title: slot
-date: 2020-02-10 21:50
+date: 2020/02/10 21:50
 categories: 
  - vue
 tags: 

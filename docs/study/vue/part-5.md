@@ -1,6 +1,6 @@
 ---
 title: 动态组件
-date: 2020-02-10 22:15
+date: 2020/02/10 22:15
 categories: 
  - vue
 tags: 

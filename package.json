@@ -25,7 +25,9 @@
     "eslint-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.6.10",
     "vuepress": "^1.1.0",
-    "vuepress-plugin-flowchart": "^1.4.3"
+    "vuepress-plugin-flowchart": "^1.4.3",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   },
   "eslintConfig": {
     "root": true,

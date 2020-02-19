@@ -1,6 +1,6 @@
 --- 
 title: 如何创建blog？
-date: 2020-01-14 15:57:53
+date: 2020/01/14 15:57:53
 categories: 
  - 自动部署
 tags: 
