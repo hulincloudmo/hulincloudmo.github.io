@@ -15,8 +15,8 @@ export default {
   },
   props: {
     text: String,
-    default() {
-      return ""
+    default () {
+      return ''
     }
   }
 }
