@@ -30,8 +30,13 @@ export default {
   },
 
   mounted () {
-    const mode = localStorage.getItem('mode')
-    this.currentMode = mode === null ? 'auto' : mode
+    let mode = localStorage.getItem('mode')
+    // this.currentMode = mode === null ? 'auto' : mode
+    // fixed: 第一次启动时自动模式无法正确切换的BUG
+    if(mode === null) {
+      this.currentMode = 'auto'
+      mode = 'auto'
+    }
     if (mode === 'dark') {
       activateMode('dark')
     } else if (mode === 'light') {
