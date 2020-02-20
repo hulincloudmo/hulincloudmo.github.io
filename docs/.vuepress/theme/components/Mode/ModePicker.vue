@@ -1,6 +1,6 @@
 <template>
   <div class="mode-options">
-    <h4 class="title">Choose mode</h4>
+    <h4 class="title">颜色模式</h4>
     <ul class="color-mode-options">
       <li
         v-for="(mode, index) in modeOptions"
@@ -21,9 +21,9 @@ export default {
   data () {
     return {
       modeOptions: [
-        { mode: 'dark', title: 'dark' },
-        { mode: 'auto', title: 'auto' },
-        { mode: 'light', title: 'light' }
+        { mode: 'dark', title: '深色' },
+        { mode: 'auto', title: '自动' },
+        { mode: 'light', title: '明亮' }
       ],
       currentMode: 'auto'
     }
@@ -36,10 +36,21 @@ export default {
       activateMode('dark')
     } else if (mode === 'light') {
       activateMode('light')
+    } else if (mode === 'auto') {
+      this.getNow()
     }
   },
 
   methods: {
+    getNow() {
+      const now = new Date()
+      const hour = now.getHours()
+      if(hour >= 17) {
+        activateMode('dark')
+      } else {
+        activateMode('light')
+      }
+    },
     selectMode (mode) {
       if (mode.mode === this.currentMode) {
         return
@@ -48,7 +59,7 @@ export default {
       } else if (mode.mode === 'light') {
         activateMode('light')
       } else if (mode.mode === 'auto') {
-        setMode()
+        this.getNow()
       }
       localStorage.setItem('mode', mode.mode)
       this.currentMode = mode.mode

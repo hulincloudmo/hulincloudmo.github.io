@@ -11,6 +11,7 @@ module.exports = {
     repo: 'https://github.com/hulincloudmo/hulincloudmo.github.io',
     type: "blog",
     authorAvatar: "/default-avatar.jpg",
+    footText: "愿世间所有美好，都能与你，环环相扣。",
     smoothScroll: true,
     serviceWorker: {
       updatePopup: true

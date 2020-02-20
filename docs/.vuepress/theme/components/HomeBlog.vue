@@ -13,20 +13,12 @@
           alt="hero">
       </ModuleTransition>
       <ModuleTransition delay="0.04">
-        <h1 v-if="$frontmatter.isShowTitleInHome !== false">{{ $frontmatter.heroText || $title || '午后南杂' }}</h1>
+        <h1 v-if="$frontmatter.isShowTitleInHome !== false">{{ $frontmatter.heroText || $title || '' }}</h1>
       </ModuleTransition>
 
       <ModuleTransition delay="0.08">
         <p v-show="recoShowModule" class="description">
           {{ $description || 'Welcome to your vuePress-theme-reco site' }}
-        </p>
-      </ModuleTransition>
-
-      <ModuleTransition delay="0.16">
-        <p
-          class="huawei"
-          v-if="recoShowModule && $themeConfig.huawei === true">
-          <i class="iconfont reco-huawei" style="color: #fc2d38"></i>&nbsp;&nbsp;&nbsp;华为，为中华而为之！
         </p>
       </ModuleTransition>
     </div>

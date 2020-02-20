@@ -1,5 +1,12 @@
 const {getChildren} = require("./slidebar-children-generate")
 
+/**
+ * @return {string}
+ */
+function createFilePath(dirPath) {
+  return `docs/study/${dirPath}/`
+}
+
 let study = [
   {
     title: "小知识",
@@ -41,22 +48,18 @@ let study = [
   {
     title: "vue相关",
     collapsable: false,
-    children: getChildren('docs/study/vue/')
+    children: getChildren(createFilePath("vue"))
   },
   {
     title: "react相关",
     collapsable:false,
-    children: getChildren('docs/study/react/')
+    children: getChildren(createFilePath('react'))
   }
   ,
   {
     title: "面试相关",
     collapsable: false,
-    children: [
-      '/study/offer/js',
-      '/study/offer/js-problem',
-      '/study/offer/vue/problem',
-    ]
+    children: getChildren(createFilePath('offer'))
   }
 ]
 

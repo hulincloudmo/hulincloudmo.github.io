@@ -1,12 +1,17 @@
+const {getChildren} = require("./slidebar-children-generate")
+
+/**
+ * @return {string}
+ */
+function createFilePath(dirPath) {
+  return `docs/guide/${dirPath}/`
+}
+
 let guide = [
   {
     title: "坑坑坑",
     collapsable: false,
-    children: [
-      'code-style/code',
-      'code-style/browser-fix',
-      'code-style/js-code'
-    ]
+    children: getChildren(createFilePath("code-style"))
   },
   {
     title: "javascript",

@@ -1,5 +1,5 @@
 --- 
-title: 如何创建blog？
+title: 使用vuepress创建个人博客
 date: 2020/01/14 15:57:53
 categories: 
  - 自动部署
@@ -7,15 +7,12 @@ tags:
  - 部署blog
 ---
 
-
-## 如何创建一个像我一样的blog
-
 :::: tip
  本文将介绍四大步骤使用vuepress
- · 使用vuepress搭建您的个人博客并部署在github的gitpage上
- · 使用github的自定义域名功能将gitpage换到自己的域名上
- · 解决每次提交github时自定义域名会自动重置的问题
- · 使用TravisCI自动化部署更新博客
+ - 使用vuepress搭建您的个人博客并部署在github的gitpage上
+ - 使用github的自定义域名功能将gitpage换到自己的域名上
+ - 解决每次提交github时自定义域名会自动重置的问题
+ - 使用TravisCI自动化部署更新博客
  @flowstart
  process=>operation: Operation
  e=>end: End
@@ -166,3 +163,83 @@ whereis命令原理：只能用于程序名的搜索，而且只搜索二进制�
 
 参考：https://www.cnblogs.com/mfryf/p/4568731.html
 :::
+
+
+## 自动生成侧边栏路由
+
+vuepress的自带路由是不好用的，当你使用自动生成时，就不能生成一级分类，只能根据文章标题建立二级标题，那么如果你想让本博客一样的效果，那么你需要手动配置这样的配置
+```javascript
+{
+    title: "坑坑坑",
+    collapsable: false,
+    children: [
+      'code-style/code',
+      'code-style/browser-fix',
+      'code-style/js-code'
+    ]
+  }
+```
+每次更新时，还需要手动向列表添加children，这是非常麻烦的，所以下面我提供了一个函数来处理这样的问题，不过你可能还需要做一些改动。
+
+```javascript
+const fs = require('fs')
+
+function getChildren(path) {
+  const root = []
+  readDirSync(path,root)
+  return root
+}
+
+function readDirSync(path,root){
+  let pa = fs.readdirSync(path);
+  pa.forEach(function(ele,index){
+    let info = fs.statSync(path+"/"+ele)
+    if(info.isDirectory()) {
+      // 出现二级目录，需要递归
+      readDirSync(path+ele,root)
+    } else {
+      if (checkFileType(ele)) {
+        root.push(prefixPath(path,ele))
+      }
+    }
+  })
+}
+
+function checkFileType(path) {
+  return path.includes(".md")
+}
+
+function prefixPath(path,dirPath) {
+  // 这里的4就是你vuepress所在目录的文件夹长度，比如docs就是4
+  path = path.slice(4,path.length)
+  const pathLast = path.slice(path.length-1)
+  const dirLast = dirPath.slice(0,1)
+  // 处理二级目录的斜杠问题
+  if(pathLast === '/' && dirLast === '/') {
+    const prefix = path.slice(0,path.length-1)
+    return prefix + dirPath
+  } else if (pathLast !== '/' && dirLast === '/' || pathLast === '/' && dirLast !== '/') {
+    return path + dirPath
+  } else if (pathLast !== '/' && dirLast !== '/') {
+    return `${path}/${dirPath}`
+  }
+}
+
+module.exports = {
+  getChildren:getChildren
+}
+```
+
+通过调用`getChildren(basePath)`方法就可以获得对应`basePath`目录下的所有博客，即使是子目录，函数也会帮你正确的返回！但是为了保证函数处理过程的正确性，你传的目录格式必须符合`docs/xxx/xxx/`，否则函数和webpack都不能正确的帮你生成数据。
+
+为了保证你的目录是符合要求的，你可以使用仿制以下帮助函数来生成basePath
+```javascript
+/**
+ * @return {string}
+ */
+// xxx就是你的博客文件所在的一级目录，dirPath为二级目录
+function createFilePath(dirPath) {
+  return `docs/xxx/${dirPath}/`
+// `docs/study/${dirPath}/`
+}
+```
