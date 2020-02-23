@@ -1,10 +1,13 @@
 <template>
   <div class="home-blog">
     <div class="hero" :style="{ ...bgImageStyle }">
-      <div
-        class="mask"
-        :style="{
-      background: `url(${$frontmatter.bgImage ? $withBase($frontmatter.bgImage) : ''}) center/cover no-repeat`}"></div>
+<!--      <div-->
+<!--        class="mask"-->
+<!--        :style="{-->
+<!--      background: `url(${$frontmatter.bgImage ? $withBase($frontmatter.bgImage) : ''}) center/cover no-repeat`}">-->
+<!--        -->
+<!--      </div>-->
+      <img :src="$frontmatter.bgImage ? $withBase($frontmatter.bgImage) : ''" title="图片来自互联网，如侵权请联系删除">
       <ModuleTransition>
         <img
           v-if="recoShowModule && $frontmatter.heroImage"

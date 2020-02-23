@@ -25,10 +25,13 @@ function checkFileType(path) {
 }
 
 function prefixPath(path,dirPath) {
-  path = path.slice(4,path.length)
+  let index = path.indexOf("/")
+  // 去除一级目录地址
+  path = path.slice(index,path.length)
   const pathLast = path.slice(path.length-1)
   const dirLast = dirPath.slice(0,1)
   if(pathLast === '/' && dirLast === '/') {
+    // 去除其中一个斜杠
     const prefix = path.slice(0,path.length-1)
     return prefix + dirPath
   } else if (pathLast !== '/' && dirLast === '/' || pathLast === '/' && dirLast !== '/') {

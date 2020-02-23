@@ -179,7 +179,7 @@ vuepress的自带路由是不好用的，当你使用自动生成时，就不能
     ]
   }
 ```
-每次更新时，还需要手动向列表添加children，这是非常麻烦的，所以下面我提供了一个函数来处理这样的问题，不过你可能还需要做一些改动。
+每次更新时，还需要手动向列表添加children，这是非常麻烦的，所以下面笔者提供了一个函数来处理这样的问题，不过你可能还需要做一些改动。
 
 ```javascript
 const fs = require('fs')
@@ -210,8 +210,8 @@ function checkFileType(path) {
 }
 
 function prefixPath(path,dirPath) {
-  // 这里的4就是你vuepress所在目录的文件夹长度，比如docs就是4
-  path = path.slice(4,path.length)
+  let index = path.indexOf("/")
+  path = path.slice(index,path.length)
   const pathLast = path.slice(path.length-1)
   const dirLast = dirPath.slice(0,1)
   // 处理二级目录的斜杠问题
@@ -243,3 +243,5 @@ function createFilePath(dirPath) {
 // `docs/study/${dirPath}/`
 }
 ```
+
+
