@@ -7,7 +7,7 @@
 <!--      background: `url(${$frontmatter.bgImage ? $withBase($frontmatter.bgImage) : ''}) center/cover no-repeat`}">-->
 <!--        -->
 <!--      </div>-->
-      <img :src="$frontmatter.bgImage ? $withBase($frontmatter.bgImage) : ''" title="图片来自互联网，如侵权请联系删除">
+      <img :src="$frontmatter.bgImage ? $withBase($frontmatter.bgImage) : ''" style="width: 100%" title="图片来自互联网，如侵权请联系删除">
       <ModuleTransition>
         <img
           v-if="recoShowModule && $frontmatter.heroImage"
@@ -41,7 +41,7 @@
             @getCurrentPage="getCurrentPage" />
         </div>
         <div class="info-wrapper">
-          <PersonalInfo/>
+          <PersonalInfo />
           <h4><i class="iconfont reco-category"></i> 分类</h4>
           <ul class="category-wrapper">
             <li class="category-item" v-for="(item, index) in this.$categories.list" :key="index">
