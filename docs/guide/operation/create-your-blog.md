@@ -232,7 +232,7 @@ module.exports = {
 
 通过调用`getChildren(basePath)`方法就可以获得对应`basePath`目录下的所有博客，即使是子目录，函数也会帮你正确的返回！但是为了保证函数处理过程的正确性，你传的目录格式必须符合`docs/xxx/xxx/`，否则函数和webpack都不能正确的帮你生成数据。
 
-为了保证你的目录是符合要求的，你可以使用仿制以下帮助函数来生成basePath
+为了保证你的目录是符合要求的，你可以使用以下帮助函数来生成basePath
 ```javascript
 /**
  * @return {string}
@@ -243,5 +243,9 @@ function createFilePath(dirPath) {
 // `docs/study/${dirPath}/`
 }
 ```
+
+有了上面两个函数后，你可以在每个分类页下使用这两个函数来自动生成侧边栏
+
+`getChildren(createFilePath("code-style"))`
 
 
