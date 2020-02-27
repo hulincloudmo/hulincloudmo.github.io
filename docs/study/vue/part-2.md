@@ -4,7 +4,7 @@ date: 2020/02/10 20:06
 categories: 
  - vue
 tags: 
- - vue:v-model
+ - v-model
 ---
 
 <!-- more -->
