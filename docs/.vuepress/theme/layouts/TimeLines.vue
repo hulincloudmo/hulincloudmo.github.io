@@ -3,7 +3,7 @@
   <Common :sidebar="false" :isComment="false">
     <ul class="timeline-wrapper">
       <ModuleTransition >
-        <li v-show="recoShowModule" class="desc">忆往事</li>
+        <li v-show="recoShowModule" class="desc">忆,往事如风</li>
       </ModuleTransition>
       <ModuleTransition
         :delay="String(0.08 * (index + 1))"

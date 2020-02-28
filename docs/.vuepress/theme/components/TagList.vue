@@ -21,6 +21,9 @@ export default {
   },
   computed: {
     tags () {
+      if (this.$tags.list.length > 20) {
+        return [{ name: '全部', path: '/tag/' }, ...this.$tags.list.splice(0,20)]
+      }
       return [{ name: '全部', path: '/tag/' }, ...this.$tags.list]
     }
   },

@@ -23,11 +23,7 @@ let guide = [
   {
     title: "vue",
     collapsable:false,
-    children:[
-      'vue/vue-response',
-      'vue/disorder-vue',
-      'vue/v-model-custom'
-    ]
+    children:getChildren(createFilePath("vue"))
   },
   {
     title: "Typescript",
@@ -39,22 +35,12 @@ let guide = [
   {
     title: "微信小程序相关",
     collapsable: false,
-    children: [
-      'miniprogram/scroll-view',
-      'miniprogram/loading',
-      'miniprogram/paging',
-      'miniprogram/mini-diff-vue'
-    ]
+    children: getChildren(createFilePath("miniprogram"))
   },
   {
     title: "电商相关",
     collapsable: false,
-    children: [
-      'electronic-commerce/spu-and-sku',
-      'electronic-commerce/spu-shop',
-      'electronic-commerce/spu-shop-2',
-      'electronic-commerce/spu-shop-3',
-    ]
+    children: getChildren(createFilePath("electronic-commerce"))
   },
   {
     title: "运维相关",
