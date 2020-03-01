@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path')
 
 function getChildren(path) {
   const root = []
@@ -24,21 +25,12 @@ function checkFileType(path) {
   return path.includes(".md")
 }
 
-function prefixPath(path,dirPath) {
-  let index = path.indexOf("/")
+function prefixPath(basePath,dirPath) {
+  let index = basePath.indexOf("/")
   // 去除一级目录地址
-  path = path.slice(index,path.length)
-  const pathLast = path.slice(path.length-1)
-  const dirLast = dirPath.slice(0,1)
-  if(pathLast === '/' && dirLast === '/') {
-    // 去除其中一个斜杠
-    const prefix = path.slice(0,path.length-1)
-    return prefix + dirPath
-  } else if (pathLast !== '/' && dirLast === '/' || pathLast === '/' && dirLast !== '/') {
-    return path + dirPath
-  } else if (pathLast !== '/' && dirLast !== '/') {
-    return `${path}/${dirPath}`
-  }
+  basePath = basePath.slice(index,path.length)
+  // replace用于处理windows电脑的路径用\表示的问题
+  return path.join(basePath,dirPath).replace(/\\/g,"/")
 }
 
 module.exports = {

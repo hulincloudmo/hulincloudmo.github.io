@@ -195,17 +195,8 @@ function checkFileType(path) {
 function prefixPath(path,dirPath) {
   let index = path.indexOf("/")
   path = path.slice(index,path.length)
-  const pathLast = path.slice(path.length-1)
-  const dirLast = dirPath.slice(0,1)
-  // 处理二级目录的斜杠问题
-  if(pathLast === '/' && dirLast === '/') {
-    const prefix = path.slice(0,path.length-1)
-    return prefix + dirPath
-  } else if (pathLast !== '/' && dirLast === '/' || pathLast === '/' && dirLast !== '/') {
-    return path + dirPath
-  } else if (pathLast !== '/' && dirLast !== '/') {
-    return `${path}/${dirPath}`
-  }
+  // replace用于处理windows电脑的路径用\表示的问题
+    return path.join(basePath,dirPath).replace(/\\/g,"/")
 }
 
 module.exports = {
