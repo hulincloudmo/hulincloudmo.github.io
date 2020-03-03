@@ -16,6 +16,7 @@ tags:
     usedExports: true
 }
 }
+// treeShaking会把没有导出的东西的模块默认排除，当有不能排除的文件时，你需要配置sideEffects
 // package.json 排除掉不需要摇树优化的文件
 {
   "sideEffects": ["*.css"]
