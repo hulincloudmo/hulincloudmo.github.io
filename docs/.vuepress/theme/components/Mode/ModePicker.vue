@@ -30,13 +30,14 @@ export default {
   },
 
   mounted () {
-    let mode = localStorage.getItem('mode')
     // this.currentMode = mode === null ? 'auto' : mode
     // fixed: 第一次启动时自动模式无法正确切换的BUG
-    if(mode === null) {
-      this.currentMode = 'auto'
-      mode = 'auto'
-    }
+    // 更优雅的实现
+    let mode = localStorage.getItem('mode') || 'auto'
+    // if(mode === null) {
+    //   this.currentMode = 'auto'
+    //   mode = 'auto'
+    // }
     if (mode === 'dark') {
       activateMode('dark')
     } else if (mode === 'light') {
@@ -50,10 +51,10 @@ export default {
     getNow() {
       const now = new Date()
       const hour = now.getHours()
-      if(hour >= 17) {
-        activateMode('dark')
-      } else {
+      if(hour > 6 && hour <= 17) {
         activateMode('light')
+      } else {
+        activateMode('dark')
       }
     },
     selectMode (mode) {
