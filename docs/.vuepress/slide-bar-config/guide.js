@@ -21,9 +21,7 @@ let guide = [
   {
     title: "javascript",
     collapsable: false,
-    children: [
-      'js/rubbish-recover'
-    ]
+    children: getChildren(createFilePath("js"))
   },
   {
     title: "vue",

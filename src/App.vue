@@ -3,7 +3,7 @@
     <p>双向动态绑定</p>
     <p>{{name}}</p>
     <custom-v-model v-model="name"></custom-v-model>
-
+    <component :is="componentName" />
   </div>
 </template>
 
@@ -14,7 +14,8 @@ export default {
   data () {
     return {
       name: '陌上青夏',
-      message: ''
+      message: '',
+      componentName: "customVModel"
     }
   },
   beforeDestroy() {
