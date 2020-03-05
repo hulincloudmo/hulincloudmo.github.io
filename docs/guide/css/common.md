@@ -12,6 +12,7 @@ tags:
 ## 1.制作边框神器-border-image
 使用border-image可以方便的给一个容器加上四周边框
 
+```html
 <div style="width: 500px;
 height: 500px;
 border:30px solid transparent;
@@ -19,4 +20,5 @@ border-image-source: url('https://blog.hulincloud.cn/8.jpg');
 border-image-slice: 10 10 10 10;">
 111
 </div>
+```
 
