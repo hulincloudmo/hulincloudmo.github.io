@@ -19,6 +19,20 @@ VUE实现双向数据绑定的原理就是利用了 Object.defineProperty() 这�
 
 组件实际上在编译后会变成一个类，如果不是函数的话，所有的组件data就会一样了，而函数里返回的变量会受到闭包的影响而保留
 
+## Vue的action和mutation有何区别
+
+- action中处理异步，mutation不可以
+
+- mutation中做原子操作
+
+- action可以整合多个mutation
+
+## 响应式原理
+
+- 监听data
+
+- 组件渲染、更新过程
+
 
 
 

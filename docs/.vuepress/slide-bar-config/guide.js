@@ -14,6 +14,11 @@ let guide = [
     children: getChildren(createFilePath("code-style"))
   },
   {
+    title: "css",
+    collapsable:false,
+    children: getChildren(createFilePath("css"))
+  },
+  {
     title: "javascript",
     collapsable: false,
     children: [
