@@ -27,18 +27,68 @@ let b = fn()  // 输出100
 
 ### 闭包的应用-函数的柯里化（curring）
 
-柯里化？这么高端的名词到底是什么意思？其实只是curring的中文读音而已，实际上也就是通过闭包简化函数的参数使用，下面看一个简单的例子
+柯里化？这么高端的名词到底是什么意思？其实只是curring的中文读音而已，实际上也就是通过闭包简化函数的参数使用，下面看一个简单的例子来解释科里化的运用
+
+```javascript
+function curring() {
+    let _args = []
+    return (function a() {
+        if (arguments.length === 0) {
+            let num = 0
+            _args.forEach(v=>{
+                num+=v
+            })
+            return num
+        }
+        _args = _args.concat(Array.from(arguments))
+        return a
+    })
+}
+
+const nums = curring()
+
+nums(2,3)
+nums(1)
+console.log(nums()) // 6
+```
+
+耐心看完上面的函数，可以发现：
+1. 当我们真正需要求值时，再传入一个空参数即可，避免了不必要的求值
+2. 参数_args得到了复用
+
+当然科里化还有一个用处，**节约函数的参数**
+
+我们再看一个例子
+
+```javascript
+function save(reg) {
+    return function (value) {
+        return reg.test(value)
+    }
+}
+
+let reg = save(/www/)
+
+console.log(reg("wwww")) // true
+console.log(reg('w2')) // false
+```
+通过柯里化，我们只用传递一次验证规则，就可以多次对目标字符串进行多次验证，节约了一次函数的使用。
+
+### 总结
+
+闭包在使用中可以简化我们的代码，但是我们**不能滥用**，因为闭包的变量会一直保存，可能会造成大量的内存占用，而且也不会被JS的垃圾回收机制所回收，所以在我们确定一个闭包函数不会使用到的时候，一定要记得手动清除闭包
+
 
 
 
 ## this的指向问题
 
 ### 一、什么时候确定this的指向
-this的指向在没有执行到的时候是未知的
+this的指向在没有执行到的时候是未知的,执行的时候才会确定this指向
 
 ### 二、箭头函数中的this
 
-箭头函数的this永远取的是他的上级作用域的值
+箭头函数的this永远取的是他的上级作用域的值，箭头函数中本身没有this
 
 ## ajax
 
@@ -105,7 +155,40 @@ new会使执行函数的上下文指向这个函数的本身，而直接执行�
 
 ## 判断类型的终极解决方案
 
-`Object.prototype.toString.call()`
+### 1. 解决方案一：`typeOf`
+
+typeOf 的判断能力是比较有限的，**typeof只能检测使用字面量命名的基本数据类型（除了 null）**
+
+```javascript
+var  c = true;
+    console.log(typeof(c));   // boolean
+var  A = new Number(123);
+    console.log(typeof(A));   // object
+```
+
+### 2.解决方案二：`intanceof`
+
+instanceof原理：只要左边的对象的对象能够通过原型链`__proto__`是指向右边的构造函数就可以
+```javascript
+function instance_of(L, R) {    //L 表示左表达式，R 表示右表达式
+ var O = R.prototype;           // 取 R 的显示原型
+ L = L.__proto__;               // 取 L 的隐式原型
+ while (true) { 
+   if (L === null) 
+     return false; 
+   if (O === L)                 // 这里重点：当 O 严格等于 L 时，返回 true 
+     return true; 
+   L = L.__proto__; 
+ } 
+}
+```
+instanceof是通过判断变量的原型链是否相同来判断变量是否是同一类型，但是instanceof也有缺陷，就是她不能够去判断基本数据类型，因为基本数据类型的数组和对象的原型是一样的
+
+```javascript
+console.log([] instanceof Object) // true
+```
+
+### 3. 终极解决方案：`Object.prototype.toString.call()`
 
 ```javascript
 Object.prototype.toString.call({})              // '[object Object]'
@@ -126,6 +209,12 @@ Object.prototype.toString.call(new Map())       // '[object Map]'
 Object.prototype.toString.call(new WeakMap())   // '[object WeakMap]'
 
 ```
+
+### 总结
+
+如果你能够知道一个变量一定会是**字面量定义的**基本类型，那么你可以使用typeof,如果是对象或者类，可以使用instanceof，为了保险，也可以使用终极方案
+
+
 
 
 
