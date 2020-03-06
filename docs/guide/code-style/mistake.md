@@ -5,7 +5,7 @@ categories:
  - 人生
 tags: 
  - 错误
-key:
+keys:
  - mistake
 ---
 这里记录了我开发时因为自己不小心所犯过的错误……吾日三省吾身

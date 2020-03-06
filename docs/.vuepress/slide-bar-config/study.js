@@ -24,6 +24,11 @@ let study = [
     ]
   },
   {
+    title: "typescript学习旅程",
+    collapsable:false,
+    children: getChildren(createFilePath("typescript"))
+  },
+  {
     title: "http协议",
     collapsable: false,
     children: [
@@ -58,7 +63,7 @@ let study = [
   ,
   {
     title: "面试相关",
-    collapsable: false,
+    collapsable: true,
     children: getChildren(createFilePath('offer'))
   }
 ]

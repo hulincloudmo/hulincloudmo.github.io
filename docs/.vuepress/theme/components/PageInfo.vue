@@ -79,7 +79,7 @@ export default {
         return formatDate(value)
       } else {
         // 用户没有输入或者输入了 00:00:00
-        return formatDate(value, 'yyyy-MM-dd')
+        return formatDate(value, 'yyyy/MM/dd')
       }
     }
   },

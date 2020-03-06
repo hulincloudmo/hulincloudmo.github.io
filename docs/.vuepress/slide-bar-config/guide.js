@@ -29,13 +29,6 @@ let guide = [
     children:getChildren(createFilePath("vue"))
   },
   {
-    title: "Typescript",
-    collapsable: false,
-    children: [
-      'test'
-    ]
-  },
-  {
     title: "微信小程序相关",
     collapsable: false,
     children: getChildren(createFilePath("miniprogram"))
