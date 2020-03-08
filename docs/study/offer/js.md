@@ -86,9 +86,149 @@ console.log(reg('w2')) // false
 ### 一、什么时候确定this的指向
 this的指向在没有执行到的时候是未知的,执行的时候才会确定this指向
 
+### 二、this指向的修炼！
+
+1. 隐式丢失
+
+先上代码，先上代码
+
+```javascript
+function foo () {
+  console.log(this.a)
+}
+function doFoo (fn) {
+  console.log(this)
+  fn()
+}
+var obj = { a: 1, foo }
+var a = 2
+var obj2 = { a: 3, doFoo }
+
+obj2.doFoo(obj.foo)
+```
+如果你把一个函数当成参数传递到另一个函数的时候，也会发生隐式丢失的问题，且与包裹着它的函数的this指向无关。在非严格模式下，会把该函数的this绑定到window上，严格模式下绑定到undefined。
+
+2. setTimeout中的this指向
+
+```javascript
+var obj1 = {
+  a: 1
+}
+var obj2 = {
+  a: 2,
+  foo1: function () {
+    console.log(this.a)
+  },
+  foo2: function () {
+    setTimeout(function () {
+      console.log(this)
+      console.log(this.a)
+    }, 0)
+  }
+}
+var a = 3
+
+obj2.foo1()
+obj2.foo2()
+```
+
+**setTimeout的this指向会到window**
+
+```javascript
+window.setTimeout(function () {
+	console.log(this)
+  console.log(this.a)
+}, 0)
+```
+
+所以结果是
+
+```text
+2
+Window{...}
+3
+```
+
+
+
 ### 二、箭头函数中的this
 
-箭头函数的this永远取的是他的上级作用域的值，箭头函数中本身没有this
+- 箭头函数的this永远取的是他的上级作用域的值，箭头函数中本身没有this
+- 字面量对象不是作用域，作用域只有全局作用域和函数作用域
+注意，**箭头函数的this指向不受bind，apply，call的影响，你即使调用了也是没有作用的！！！！**
+
+```javascript
+var name = 'window'
+var obj1 = {
+  name: 'obj1',
+  foo: function () {
+    console.log(this.name)
+    return function () {
+      console.log(this.name)
+    }
+  }
+}
+var obj2 = {
+  name: 'obj2',
+  foo: function () {
+    console.log(this.name)
+    return () => {
+      console.log(this.name)
+    }
+  }
+}
+var obj3 = {
+  name: 'obj3',
+  foo: () => {
+    console.log(this.name)
+    return function () {
+      console.log(this.name)
+    }
+  }
+}
+var obj4 = {
+  name: 'obj4',
+  foo: () => {
+    console.log(this.name)
+    return () => {
+      console.log(this.name)
+    }
+  }
+}
+
+obj1.foo()() // 'obj1' 'window'
+obj2.foo()() // 'obj2' 'obj2'
+obj3.foo()() // 'window' 'window'
+obj4.foo()() // 'window' 'window'
+
+```
+
+```javascript
+var name = 'window'
+var obj1 = {
+  name: 'obj1',
+  foo1: function () {
+    console.log(this.name)
+    return () => {
+      console.log(this.name)
+    }
+  },
+  foo2: () => {
+    console.log(this.name)
+    return function () {
+      console.log(this.name)
+    }
+  }
+}
+var obj2 = {
+  name: 'obj2'
+}
+obj1.foo1.call(obj2)() // 'obj2' 'obj2'
+obj1.foo1().call(obj2) // 'obj1' 'obj1'
+obj1.foo2.call(obj2)() // 'window' 'window'
+obj1.foo2().call(obj2) // 'window' 'obj2'
+
+```
 
 ## ajax
 

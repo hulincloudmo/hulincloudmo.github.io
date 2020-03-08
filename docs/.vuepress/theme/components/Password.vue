@@ -97,10 +97,10 @@ export default {
       }, 800)
     },
     inputFocus () {
-      this.warningText = 'Input Your Key'
+      this.warningText = '我要看小秘密'
     },
     inputBlur () {
-      this.warningText = 'Konck! Knock!'
+      this.warningText = '不行不行!你不能看'
     },
     isHasKey () {
       let { keys } = this.$themeConfig.keyPage
