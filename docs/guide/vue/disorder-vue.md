@@ -6,6 +6,8 @@ categories:
 tags: 
  - 小知识
 ---
+没事来回忆会议总没错！
+<!-- more -->
 
 ## 一、让watch在第一次变化就监听
 
@@ -25,3 +27,18 @@ watch: {
 ```
 
 <p style="color: red;font-weight: bold">在监听器中不要使用箭头函数哦~不应该使用箭头函数来定义 watcher 函数 (例如 searchQuery: newValue => this.updateAutocomplete(newValue))。理由是箭头函数绑定了父级作用域的上下文，所以 this 将不会按照期望指向 Vue 实例，this.updateAutocomplete 将是 undefined。</p>
+
+
+## 按键修饰符
+
+1. alt或shift按住的时候也可以触发
+
+`<button @click.ctrl="onClick">A</button>`
+
+2. 有且只有Ctrl被按下的时候才触发
+
+`<button @click.ctrl.exact="onClick">A</button>`
+
+3. 没有任何修饰符被按下的时候出发
+
+`<button @click.exact="onClick">A</button>`
