@@ -10,7 +10,7 @@ module.exports = {
   themeConfig: {
     repo: 'https://github.com/hulincloudmo/hulincloudmo.github.io',
     record: "桂ICP备19002590号",
-    recordLink: "http://icp.chinaz.com/info?q=hulincloud.cn",
+    recordLink: "http://www.beian.miit.gov.cn",
     type: "blog",
     authorAvatar: "/default-avatar.jpg",
     footText: "愿世间所有美好，都能与你，环环相扣。",
