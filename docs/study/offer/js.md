@@ -132,7 +132,7 @@ obj2.foo1()
 obj2.foo2()
 ```
 
-**setTimeout的this指向会到window**
+**setTimeout的this指向会到window,如果new一个对象再bind，new的函数优先级会更高，使得bind失效**
 
 ```javascript
 window.setTimeout(function () {

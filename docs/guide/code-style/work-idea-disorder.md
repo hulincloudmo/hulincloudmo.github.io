@@ -16,3 +16,10 @@ tags:
 
 在MariaDB的bin目录下运行`mysqld.exe --standalone`
 
+
+## 工具使用
+
+### idea
+#### idea配置UTF-8编码
+
+setting-file-encoding-properties- UTF-8 **旁边的勾勾一定要钩上（transparent native-to-ascii conversion）**
