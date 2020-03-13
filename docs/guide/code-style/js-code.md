@@ -54,3 +54,5 @@ class Weak {
 
 Typescript内置的private属性也可以实现私有的成员变量
 
+
+
