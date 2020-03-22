@@ -12,6 +12,11 @@ let mood = [
     title: "编程人生",
     collapsable:false,
     children: getChildren(createFilePath("coding-life"))
+  },
+  {
+    title: "工作周报",
+    collapsable: true,
+    children: getChildren(createFilePath("summary"))
   }
 ]
 
