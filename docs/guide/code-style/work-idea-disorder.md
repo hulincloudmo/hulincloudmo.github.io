@@ -12,7 +12,7 @@ tags:
 ## 各种命令
 
 ### windows相关
-#### 1.windows环境下保持启动MariaDB
+1.windows环境下保持启动MariaDB
 
 在MariaDB的bin目录下运行`mysqld.exe --standalone`
 
@@ -20,6 +20,14 @@ tags:
 ## 工具使用
 
 ### idea
-#### idea配置UTF-8编码
+1. idea配置UTF-8编码
 
 setting-file-encoding-properties- UTF-8 **旁边的勾勾一定要钩上（transparent native-to-ascii conversion）**
+
+### chrome
+
+1. 代码利用率分析
+
+使用command+shift+p输入>show coverage
+
+

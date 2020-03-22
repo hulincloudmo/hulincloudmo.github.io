@@ -42,3 +42,17 @@ watch: {
 3. 没有任何修饰符被按下的时候出发
 
 `<button @click.exact="onClick">A</button>`
+
+## 当路由不变时刷新router-view
+
+当我们的路由是`/router/:id`时，单纯改变id是不会触发`router-view`刷新的，这时候我们可以给router-view一个key值，而这个值是每次随机生成的，这样就可以刷新
+
+```vue
+<router-view :key="key"></router-view>
+
+computed: {
+    key() {
+        return this.$route.name !== undefined? this.$route.name + +new Date(): this.$route + +new Date()
+    }
+ }
+```

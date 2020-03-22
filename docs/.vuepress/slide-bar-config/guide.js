@@ -9,7 +9,7 @@ function createFilePath(dirPath) {
 
 let guide = [
   {
-    title: "坑坑坑",
+    title: "coding",
     collapsable: false,
     children: getChildren(createFilePath("code-style"))
   },
