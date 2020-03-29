@@ -48,6 +48,8 @@ let guide = [
   }
 ]
 
+// console.log(guide)
+
 module.exports = {
   guide
 }

@@ -4,8 +4,8 @@ const {study} = require("./study")
 
 let sidebar = {
   "/guide/": guide,
-    "/mood/": mood,
-    "/study/": study
+  "/mood/": mood,
+  "/study/": study
 }
 
 module.exports = {

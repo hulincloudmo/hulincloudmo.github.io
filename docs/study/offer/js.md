@@ -230,6 +230,25 @@ obj1.foo2().call(obj2) // 'window' 'obj2'
 
 ```
 
+## js的作用域
+
+````javascript
+var value = 1;
+
+function foo() {
+    console.log(value);
+}
+
+function bar() {
+    var value = 2;
+    foo();
+}
+
+bar();
+````
+
+上面的代码最终将会输出value = 1 说明JavaScript中采用的是静态作用域，执行 foo 函数，先从 foo 函数内部查找是否有局部变量 value，如果没有，就根据`书写的位置`，查找上面一层的代码，也就是 value 等于 1，所以结果会打印 1。
+  `总之，记住一句话：函数的作用域基于函数创建的位置，函数的作用域问题一定不会错！`
 ## ajax
 
 1. XMLHttpRequest
@@ -353,6 +372,29 @@ Object.prototype.toString.call(new WeakMap())   // '[object WeakMap]'
 ### 总结
 
 如果你能够知道一个变量一定会是**字面量定义的**基本类型，那么你可以使用typeof,如果是对象或者类，可以使用instanceof，为了保险，也可以使用终极方案
+
+## 防抖与节流
+
+1. 防抖
+
+```javascript
+function debounce(func) {
+        let timeout = null
+        let count = 1
+        return function () {
+            clearTimeout(timeout)
+            let arg = [...arguments]
+            timeout = setTimeout(()=> {
+                console.log(this,arg)
+                func()
+                document.getElementById("container").innerHTML = count++
+            },1000)
+        }
+    }
+    document.getElementById("container").onmousemove = debounce()
+```
+
+这是个简单的防抖函数，我们不需要过多复杂的防抖函数，只要知道原理，后面不过是加需求的事……，这里举出两个例子，比如这里使用了箭头函数后，就不需要使用网上的方法需要重新指定this的指向,同时，为了拿到原始事件中的参数，你可以使用argument参数获取原始事件
 
 
 

@@ -30,4 +30,12 @@ setting-file-encoding-properties- UTF-8 **旁边的勾勾一定要钩上（trans
 
 使用command+shift+p输入>show coverage
 
+### git
+
+1. git cherry-pick
+
+git cherry-pick可以理解为”挑拣”提交，它会获取某一个分支的单笔提交，并作为一个新的提交引入到你当前分支上。 当我们需要在本地合入其他分支的提交时，如果我们不想对整个分支进行合并，而是只想将某一次提交合入到本地当前分支上，那么就要使用git cherry-pick了。
+
+`git cherry-pick commitid`
+
 
