@@ -1,6 +1,6 @@
 ---
 title: ts基础语法
-date: 2020-03-06 2:10 下午
+date: 2020-03-06 2:10
 categories: 
  - ts
 tags: 

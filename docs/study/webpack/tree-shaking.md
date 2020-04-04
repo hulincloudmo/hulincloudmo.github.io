@@ -1,6 +1,6 @@
 ---
 title: tree-shaking
-date: 2020-02-24 10:28 下午
+date: 2020-02-24 10:28
 categories: 
  - webpack
 tags: 

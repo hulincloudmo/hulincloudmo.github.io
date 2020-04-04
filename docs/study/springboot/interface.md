@@ -1,6 +1,6 @@
 ---
 title: 多接口设计技巧
-date: 2020-02-25 10:15 上午
+date: 2020-02-25 10:15
 categories: 
  - springboot
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: vue组件是如何渲染和更新的？
-date: 2020-02-17 12:42 下午
+date: 2020-02-17 12:42
 categories: 
  - vue
 tags: 

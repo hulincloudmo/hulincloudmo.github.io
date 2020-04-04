@@ -1,10 +1,10 @@
 ---
 title: 我犯过的错误
-date: 2020-03-07 12:36 上午
+date: 2020-03-07 12:36
 categories: 
  - 人生
 tags: 
- - 错误
+ - 日积月累
 keys:
  - mistake
 ---

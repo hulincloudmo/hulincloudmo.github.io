@@ -1,6 +1,6 @@
 ---
 title: hash模式和history模式
-date: 2020-02-17 1:01 下午
+date: 2020-02-17 1:01
 categories: 
  - vue
 tags: 

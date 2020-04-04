@@ -30,7 +30,7 @@ tags:
 ```jsx harmony
 /**
  * @author 陌上青夏
- * @创建时间 2020/2/12 5:19 下午
+ * @创建时间 2020/2/12 5:19
  */
 import React,{Component} from 'react'
 import './antd.css'

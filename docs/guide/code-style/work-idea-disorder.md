@@ -4,7 +4,7 @@ date: 2020/02/25 13:01
 categories: 
  - 业务
 tags: 
- - 小知识
+ - 日积月累
 ---
 
 <!-- more -->
@@ -23,6 +23,10 @@ tags:
 1. idea配置UTF-8编码
 
 setting-file-encoding-properties- UTF-8 **旁边的勾勾一定要钩上（transparent native-to-ascii conversion）**
+
+2. 配置sass编译
+
+安装sass使用国内源`gem sources -a https://gems.ruby-china.com/`
 
 ### chrome
 

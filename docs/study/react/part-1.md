@@ -14,7 +14,7 @@ tags:
 ```typescript jsx
 /**
  * @author 陌上青夏
- * @创建时间 2020/2/12 5:19 下午
+ * @创建时间 2020/2/12 5:19
  */
 import React, {Fragment} from 'react'
 class todoList extends React.Component<any,any> {

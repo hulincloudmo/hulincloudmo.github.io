@@ -1,6 +1,6 @@
 ---
 title: css的小零碎
-date: 2020-03-01 1:02 上午
+date: 2020-03-01 1:02
 categories: 
  - css
 tags: 
