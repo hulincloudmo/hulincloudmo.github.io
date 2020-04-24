@@ -287,25 +287,25 @@ xhr.onreadystatechange = function() {
 
 - 解绑自定义DOM事件，如window，scroll => **不解绑容易造成内存泄漏**
 
-## 变量提升
+## 变量提升j
 
 ::: tip
-- avaScript 解释器中存在一种变量声明被提升的机制，也就是说**函数声明会被提升到作用域的最前面**，即使写代码的时候是写在最后面，也还是会被提升至最前面。
+- javaScript 解释器中存在一种变量声明被提升的机制，也就是说**函数声明会被提升到作用域的最前面**，即使写代码的时候是写在最后面，也还是会被提升至最前面。
 - 而用函数表达式创建的函数是在运行时进行赋值，且要等到表达式赋值完成后才能调用
 :::
 
 ```javascript
 var getName //变量被提升，此时为undefined
 
-getName() //oaoafly 函数被提升 这里受函数声明的影响，虽然函数声明在最后可以被提升到最前面了
+getName() //test 1 函数被提升 这里受函数声明的影响，虽然函数声明在最后可以被提升到最前面了
 var getName = function() {
-    console.log('wscat')
+    console.log('test 2')
 } //函数表达式此时才开始覆盖函数声明的定义
-getName() //wscat
+getName() //test 2
 function getName() {
-    console.log('oaoafly')
+    console.log('test 1')
 }
-getName() //wscat 这里就执行了函数表达式的值
+getName() //test 1 这里就执行了函数表达式的值
 ```
 
 ## new一个函数和直接定义函数有什么区别？
@@ -377,8 +377,10 @@ Object.prototype.toString.call(new WeakMap())   // '[object WeakMap]'
 
 1. 防抖
 
+防抖的作用就是限制一个事件的频繁触发,当一个事件触发一段时间后没有再触发时,处理函数才会运行
+
 ```javascript
-function debounce(func) {
+function t(func) {
         let timeout = null
         let count = 1
         return function () {
@@ -394,9 +396,124 @@ function debounce(func) {
     document.getElementById("container").onmousemove = debounce()
 ```
 
-这是个简单的防抖函数，我们不需要过多复杂的防抖函数，只要知道原理，后面不过是加需求的事……，这里举出两个例子，比如这里使用了箭头函数后，就不需要使用网上的方法需要重新指定this的指向,同时，为了拿到原始事件中的参数，你可以使用argument参数获取原始事件
+这是个简单地防抖函数，我们不需要过多复杂地防抖函数，只要知道原理，后面不过是加需求的事……，这里举出两个例子，比如这里使用了箭头函数后，就不需要使用网上的方法需要重新指定this的指向,同时，为了拿到原始事件中的参数，你可以使用argument参数获取原始事件
+
+2. 节流
+
+节流的作用就是让一个事件在一段时间内只会触发一次
+
+```javascript
+var throttle = function(func, delay) {            
+    var timer = null;            
+    return function() {                
+        var context = this;               
+        var args = arguments;                
+        if (!timer) {                    
+            timer = setTimeout(function() {                        
+                func.apply(context, args);                        
+                timer = null;                    
+            }, delay);                
+        }            
+    }        
+}        
+function handle() {            
+    console.log(Math.random());        
+}        
+window.addEventListener('scroll', throttle(handle, 1000));
+```
 
 
+
+
+## 模拟一个new过程
+
+```javascript
+function Cure() {
+Cure.prototype.say = ()=> {
+    console.log("hello")
+}
+}
+
+function create(constructor,...arg) {
+    const obj = Object.create(constructor.prototype)
+    const res  = constructor.apply(obj,arg)
+    return res instanceof Object ? res : obj
+}
+
+let a = create(Cure)
+
+a.say()
+```
+
+## fori（forEach）循环和for of循环的区别
+
+### forEach循环的实现原理
+
+```javascript
+for (var i = 0; i < length; i++) {
+  if (i in array) {
+    var element = array[i];
+    callback(element, i, array);
+  }
+}
+```
+
+从实现原理中我们可以看出，forEach只是`粗暴的`在执行回调函数，如果我们的回调函数是异步函数，函数的执行时间不确定的时候，就会导致执行顺序不正确.
+
+```javascript
+async function test() {
+	let arr = [4, 2, 1]
+	arr.forEach(async item => {
+		const res = await handle(item)
+		console.log(res)
+	})
+	console.log('结束')
+}
+
+function handle(x) {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve(x)
+		}, 1000 * x)
+	})
+}
+
+test()
+```
+
+```text
+结束
+1
+2
+4
+```
+
+从结果中我们看到，我们的异步函数失效了，程序并没有等待任务完成再执行下一任务。
+
+### for of改进
+
+for of循环采用的是一种特殊的方法-迭代器
+
+::: tip 可迭代数据
+原生具有[Symbol.iterator]属性数据类型为可迭代数据类型。如数组、类数组（如arguments、NodeList）、Set和Map。
+:::
+
+```javascript
+let arr = [4, 2, 1];
+// 这就是迭代器
+let iterator = arr[Symbol.iterator]();
+console.log(iterator)
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+
+// Object [Array Iterator] {}
+// {value: 4, done: false}
+// {value: 2, done: false}
+// {value: 1, done: false}
+// {value: undefined, done: true}
+```
 
 
 

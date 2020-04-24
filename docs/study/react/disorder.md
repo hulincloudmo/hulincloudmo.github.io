@@ -17,4 +17,8 @@ tags:
 
 this在属性方法中默认是undefined，为了不用bind函数，你可以把函数定义为成员方法
 
+## e.target和e.currentTarget区别
+
+target获取的是真实点击元素，currentTarget获取的是事件所绑定的元素
+
 

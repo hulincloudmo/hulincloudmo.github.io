@@ -11,5 +11,5 @@ tags:
 
 ## 使用Fragment包裹
 
-react和vue一样都是单节点的，所以我们可以用Fragment包裹html代码外层，这样可以少包一层div
+react和vue一样都是单节点的，所以我们可以用Fragment包裹html代码外层，这样可以少包一层div,实现多节点
 

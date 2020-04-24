@@ -14,3 +14,9 @@ tags:
 ### 不支持的日期格式
 
 在对时间操作时，YYYY-MM-DD 这样的格式是不支持的，只支持YYYY/MM/DD，而chrome是两者都支持的
+
+## UC
+
+fix的元素要放在body中
+
+1. react 中可以使用ReactDOM.portal

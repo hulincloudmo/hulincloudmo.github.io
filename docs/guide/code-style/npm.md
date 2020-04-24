@@ -9,20 +9,34 @@ tags:
 
 <!-- more -->
 
-1. concurrently
+1. `concurrently`
 
 此包可以帮助你同时运行两个文件
 
-2. cross-env
+2. `cross-env`
 
 跨平台配置环境变量
 
-3. wait-on
+3. `wait-on`
 
 等待某个服务完成后才启动命令
 
-4. classnames
+4. `classnames`
 
 帮助你动态的拼接class
+
+5. `query-string`
+
+解析url中的查询参数，能够自动进行URL编码
+
+6. `vconsole`
+
+方便的查看console输出信息，可配合`AlloyLever`使用
+
+7. `day-js`
+
+日期格式转换
+
+
 
 

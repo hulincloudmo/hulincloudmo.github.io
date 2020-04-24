@@ -1,5 +1,5 @@
 ---
-title: react中的组件
+title: react中的组件-1
 date: 2020-02-12 20:41
 categories: 
  - react
@@ -92,6 +92,8 @@ export default function App(props: any) {
   )
 }
 ```
+
+
 
 
 

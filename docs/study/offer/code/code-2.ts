@@ -1,22 +1,26 @@
 // 停车场
 class CarPark {
-  private storeys:Array<Storey>
-  private AllCount:number
-  constructor(storeys) {
+  private readonly storeys:Array<Storey>
+  private AllCount: number | undefined
+  private _storeyNum: any
+  constructor(storeys: Storey[]) {
     this.storeys = storeys
     this._computedCount()
   }
-  preview(storeyNum) {
+  preview(storeyNum: number) {
+    this._storeyNum = storeyNum
     console.log(`车辆进入前，车位剩余${this.AllCount}`)
   }
 
-  join(car) {
+  join(car: Car) {
     console.log(`车辆进入停车场，车牌号为${car.getNumber()},时间为${car.getTime()}`)
+    // @ts-ignore
     this.AllCount-=1
 
   }
-  leave(car) {
+  leave(car: Car) {
     console.log(`车辆离开停车场，车牌号为${car.getNumber()},时间为${new Date().getTime()-car.getTime()}`)
+    // @ts-ignore
     this.AllCount+=1
   }
 
@@ -34,8 +38,8 @@ class CarPark {
 }
 // 停车场中的一层
 class Storey {
-  private count: number
-  private spaceGroup: Array<PackingSpace>
+  private readonly count: number
+  private readonly spaceGroup: Array<PackingSpace>
   constructor(count:number) {
     this.count = count
     this.spaceGroup = Storey._createSpace(count)
@@ -64,8 +68,8 @@ class Storey {
 // 每个停车位
 class PackingSpace {
   private status: boolean
-  private car: Car;
-  constructor(type) {
+  private car: Car | undefined;
+  constructor(type: boolean) {
     this.status = type
   }
 
@@ -73,7 +77,7 @@ class PackingSpace {
     return this.status
   }
 
-  enter(car) {
+  enter(car: Car | undefined) {
     console.log(`车辆进入停车位`)
     this.car = car
     this.status = !this.status
@@ -81,6 +85,7 @@ class PackingSpace {
 
   leave() {
     console.log(`车辆离开停车位`)
+    // @ts-ignore
     this.car = null
     this.status = !this.status
   }
@@ -88,17 +93,17 @@ class PackingSpace {
 }
 
 class Screens {
-  
+
 }
 
 class Camera {
-  
+
 }
 // 汽车
 class Car {
   private readonly time: number
   private readonly number: number
-  constructor(number) {
+  constructor(number: number) {
     this.number = number
     this.time = new Date().getTime()
   }
