@@ -69,5 +69,54 @@ SameSite 可以有下面三种值：
 7. 断开TCP连接 => 四次TCP捂手
 
 
+## 回流与重绘
+
+::: warning
+回流一定会触发重绘，而重绘不一定会回流
+:::
+
+### 回流与重绘何时会触发？
+
+回流：**当页面布局和几何信息发生变化的时候**
+
+例如：
+
+- 页面一开始渲染的时候
+- 浏览器的窗口尺寸变化 （因为回流是根据视口的大小来计算元素的位置和大小的）
+- 添加或删除可见的DOM元素
+- 元素的位置发生变化
+- 元素的尺寸发生变化（包括外边距、内边框、边框大小、高度和宽度等）
+- 内容发生变化，比如文本变化或图片被另一个不同尺寸的图片所替代
+
+
+重绘：**改变某个元素的背景色、文字颜色、边框颜色等等不影响它周围或内部布局的属性时，屏幕的一部分要重画，** <span style="color:red">但是元素的几何尺寸没有变</span>
+
+### 真实场景
+
+::: warning
+获取这些布局信息的属性的时候会触发强制回流重绘
+- offsetTop、offsetLeft、offsetWidth、offsetHeight
+- scrollTop、scrollLeft、scrollWidth、scrollHeight
+- clientTop、clientLeft、clientWidth、clientHeight
+- getComputedStyle()
+- getBoundingClientRect
+
+以上属性和方法都需要返回最新的布局信息，因此浏览器不得不清空队列，触发回流重绘来返回正确的值。因此，我们在修改样式的时候，最好避免使用上面列出的属性，他们都会刷新渲染队列。如果要使用它们，最好将值缓存起来。
+:::
+
+### 如何减少回流和重绘
+
+1. 对于复杂动画效果,使用绝对定位让其脱离文档流
+
+2. css3硬件加速（GPU加速）
+
+使用css3硬件加速，可以让transform、opacity、filters、Will-change这些动画不会引起回流重绘 
+
+
+
+
+
+
+
 
 

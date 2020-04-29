@@ -54,5 +54,37 @@ class Weak {
 
 Typescript内置的private属性也可以实现私有的成员变量
 
+## js浮点数计算不精确问题
+
+```javascript
+function accAdd(num1, num2) {
+    const num1Digits = (num1.toString().split('.')[1] || '').length;
+    const num2Digits = (num2.toString().split('.')[1] || '').length;
+    const baseNum = Math.pow(10, Math.max(num1Digits, num2Digits));
+    return (Math.round(num1 * baseNum) + Math.round(num2 * baseNum)) / baseNum;
+}
+
+function accMultiply(num1, num2) {
+    const num1Digits = (num1.toString().split('.')[1] || '').length;
+    const num2Digits = (num2.toString().split('.')[1] || '').length;
+    const baseNum = Math.pow(10, Math.max(num1Digits, num2Digits));
+    return (Math.round(num1 * baseNum) * Math.round(num2 * baseNum)) / baseNum / baseNum;
+}
+
+function accSubtract(num1, num2) {
+    const num1Digits = (num1.toString().split('.')[1] || '').length;
+    const num2Digits = (num2.toString().split('.')[1] || '').length;
+    const baseNum = Math.pow(10, Math.max(num1Digits, num2Digits));
+    return (Math.round(num1 * baseNum) - Math.round(num2 * baseNum)) / baseNum;
+}
+
+
+export {
+    accAdd,
+    accMultiply,
+    accSubtract
+}
+```
+
 
 

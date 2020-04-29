@@ -17,4 +17,10 @@ keys:
 
 `_arr = _arr.concat(anotherArr)`
 
+## 小程序
+
+### properties的类型写错导致渲染出错
+
+properties类型写错第一次渲染不会有事，但是一旦组件更新后，不符合的值就会变成null
+
 

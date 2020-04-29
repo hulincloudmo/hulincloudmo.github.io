@@ -19,7 +19,7 @@ tags:
 
 ## 工具使用
 
-### idea
+### jetbrain
 1. idea配置UTF-8编码
 
 setting-file-encoding-properties- UTF-8 **旁边的勾勾一定要钩上（transparent native-to-ascii conversion）**
@@ -27,6 +27,8 @@ setting-file-encoding-properties- UTF-8 **旁边的勾勾一定要钩上（trans
 2. 配置sass编译
 
 安装sass使用国内源`gem sources -a https://gems.ruby-china.com/`
+
+3. 全项目搜索
 
 ### chrome
 
