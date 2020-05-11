@@ -515,6 +515,8 @@ console.log(iterator.next());
 // {value: undefined, done: true}
 ```
 
+## 预解释与变量提升
+
 
 
 

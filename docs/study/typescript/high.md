@@ -40,3 +40,22 @@ const cars: CarList = {
     MercedesBenz: { age: 133 },
 }
 ```
+
+## keyof约束对象属性
+
+```typescript
+function getValue<T extends Object,K extends keyof T>(o: T, key: K) {
+  return o[key];
+}
+const obj1 = { name: '张三', age: 18 };
+const namea = getValue(obj1, 'name');
+```
+
+## 生成重复的类型
+
+```typescript
+type name = 'firstName' | 'lastName';
+type TName = {
+  [key in name]: string;
+};
+```

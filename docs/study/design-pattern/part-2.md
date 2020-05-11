@@ -10,10 +10,22 @@ tags:
 ## 单例模式
 只有一个实例，并提供全局访问。
 
-::: tip 
-单纯的JS是没办法实现完全单例模式的，这里我们使用Typescript来实现语法级提示
-:::
+1. js实现
 
+```javascript
+class Single {
+  static instance = undefined
+  constructor() {
+          if (typeof Single.instance === 'object') {
+              return Single.instance
+          }
+          Single.instance = this
+          return this
+      }
+}
+```
+
+2. ts实现
 <<<@/docs/study/design-pattern/single.ts
 
 ## 适配器模式（adapter）

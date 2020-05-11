@@ -17,10 +17,16 @@ keys:
 
 `_arr = _arr.concat(anotherArr)`
 
+2. 浮点数计算的时候记得使用js库，js自带运算浮点数是不精确的！
+
+`totalPrice = accAdd(totalPrice,this.getGoodPrice(good))`
+
 ## 小程序
 
 ### properties的类型写错导致渲染出错
 
 properties类型写错第一次渲染不会有事，但是一旦组件更新后，不符合的值就会变成null
+
+
 
 

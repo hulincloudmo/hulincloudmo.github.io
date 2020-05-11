@@ -9,6 +9,7 @@
 
 <script>
 import customVModel from "@/components/custom-v-model"
+
 export default {
   name: 'app',
   data () {
@@ -19,6 +20,7 @@ export default {
     }
   },
   beforeDestroy() {
+
   },
   components: {
     customVModel
