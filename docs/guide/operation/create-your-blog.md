@@ -344,9 +344,15 @@ namespace generate {
 module.exports = {
   start:generate.start
 }
-
-
 ```
+
+
+## 使用github webhook实现自有服务器自动化更新博客
+
+在上文中我们使用了tarvis来自动化部署我们的博客，但是他只能将博客自动部署在GitHub上，访问速度相对是要慢一些的，如果你有一台私有服务器，那么可以将原有的webhook改为发送到你自己的服务器上，同时，webhook实际上就是发送一个http请求，你需要在服务器上搭建一个后台服务
+
+### koa2实现简单服务器
+
 
 
 

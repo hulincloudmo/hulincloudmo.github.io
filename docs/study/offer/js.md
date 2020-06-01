@@ -515,7 +515,48 @@ console.log(iterator.next());
 // {value: undefined, done: true}
 ```
 
-## 预解释与变量提升
+## require和import的异同
+
+`相同点`
+- require和import都会对引入的值进行缓存，再次引入不会再执行，避免了循环引用问题。
+
+`不同点`
+
+- import导出的是一个对象，如果在其中改变对象会造成原对象变化，而`module.export`导出的值是静态绑定的
+
+例如
+
+````javascript
+// a.js
+let a = 1
+setTimeout(()=> {
+   a = 2
+},1000)
+module.exports = {
+   a
+}
+export {
+   a
+}
+````
+
+```javascript
+// b.js
+let a = require("./a.js")
+setTimeout(()=> {
+   console.log(a)  // a = 1
+},2000)
+```
+
+```javascript
+// c.js
+import a from "./a.js"
+setTimeout(()=> {
+console.log(a) // a = 2
+},2000)
+```
+
+
 
 
 

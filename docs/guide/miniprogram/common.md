@@ -18,6 +18,7 @@ tags:
 ## js
 
 1. 在page对象外的代码在小程序初始化的时候就会运行，不管是否初始化该界面
+2. 在app.onLaunch, app.onShow, page.onLoad, page.onShow, page.onReady这些生命周期函数中尽量不要使用带Sync的同步函数，容易造成进程堵塞
 
 ## 云开发
 
