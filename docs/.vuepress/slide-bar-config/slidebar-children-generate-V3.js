@@ -1,12 +1,16 @@
 "use strict";
 var fs = require('fs');
 var path = require('path');
+var os = require("os");
+var osType = os.type();
+var workFolder = "";
 var generate;
 (function (generate) {
     function resolve(basePath, resolvePath) {
         return path.resolve(basePath, resolvePath);
     }
     function start(basePath) {
+        workFolder = "/" + basePath;
         basePath = resolve(__dirname, "../../" + basePath);
         var result = [];
         var dirList = fs.readdirSync(basePath);
@@ -36,14 +40,20 @@ var generate;
             return JSON.parse(fs.readFileSync(dirPath).toString());
         }
         catch (e) {
-            throw TypeError("please check your path " + dirPath + " config.json is exist?");
+            throw TypeError("please check your directory " + dirPath + " config.json is exist?");
         }
     }
     function getChildren(path) {
         var children = [];
         readDirSync(path, children);
         return children.map(function (v) {
-            var lastIndex = v.lastIndexOf("/docs") + 5;
+            var lastIndex;
+            if (isWindows()) {
+                lastIndex = v.lastIndexOf(workFolder);
+            }
+            else {
+                lastIndex = v.lastIndexOf(workFolder);
+            }
             return v.substr(lastIndex);
         });
     }
@@ -65,10 +75,24 @@ var generate;
     function checkFileType(path) {
         return path.includes(".md");
     }
+    function isWindows() {
+        return osType === "Windows_NT";
+    }
     function prefixPath(basePath, dirPath) {
-        var index = basePath.indexOf("/");
+        var index;
+        if (isWindows()) {
+            index = basePath.indexOf("\\");
+        }
+        else {
+            index = basePath.indexOf("/");
+        }
         basePath = basePath.slice(index, path.length);
-        return path.join(basePath, dirPath).replace(/\\/g, "/");
+        if (isWindows()) {
+            return path.join(basePath, dirPath).replace(/\\/g, "/");
+        }
+        else {
+            return path.join(basePath, dirPath);
+        }
     }
 })(generate || (generate = {}));
 module.exports = {

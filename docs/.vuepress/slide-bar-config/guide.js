@@ -1,55 +1,6 @@
-const {getChildren} = require("./slidebar-children-generate")
+const {start} = require("./slidebar-children-generate-V3")
 
-/**
- * @return {string}
- */
-function createFilePath(dirPath) {
-  return `docs/guide/${dirPath}/`
-}
-
-let guide = [
-  {
-    title: "coding",
-    collapsable: false,
-    children: getChildren(createFilePath("code-style"))
-  },
-  {
-    title: "css",
-    collapsable:false,
-    children: getChildren(createFilePath("css"))
-  },
-  {
-    title: "javascript",
-    collapsable: false,
-    children: getChildren(createFilePath("js"))
-  },
-  {
-    title: "vue",
-    collapsable:false,
-    children:getChildren(createFilePath("vue"))
-  },
-  {
-    title: "微信小程序相关",
-    collapsable: false,
-    children: getChildren(createFilePath("miniprogram"))
-  },
-  {
-    title: "电商相关",
-    collapsable: false,
-    children: getChildren(createFilePath("electronic-commerce"))
-  },
-  {
-    title: "运维相关",
-    collapsable: false,
-    children: [
-      'operation/auto-CI',
-      'operation/create-your-blog'
-    ]
-  }
-]
-
-// console.log(guide)
 
 module.exports = {
-  guide
+  guide: start("guide")
 }

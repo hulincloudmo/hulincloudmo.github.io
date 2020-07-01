@@ -8,6 +8,9 @@
  */
 const fs = require('fs')
 const path = require('path')
+const os = require("os")
+const osType = os.type()
+let workFolder = ""
 
 namespace generate {
   function resolve(basePath:string,resolvePath:string) {
@@ -21,6 +24,7 @@ namespace generate {
   }
 
   export function start(basePath:string) {
+    workFolder = `/${basePath}`
     basePath = resolve(__dirname,`../../${basePath}`)
     const result = []
     const dirList = fs.readdirSync(basePath)
@@ -59,7 +63,12 @@ namespace generate {
     const children: [] = []
     readDirSync(path,children)
     return children.map((v:string) => {
-      const lastIndex = v.lastIndexOf("/docs") + 5
+      let lastIndex
+      if (isWindows()) {
+        lastIndex = v.lastIndexOf(workFolder)
+      }else {
+        lastIndex = v.lastIndexOf(workFolder)
+      }
       return v.substr(lastIndex)
     })
   }
@@ -83,12 +92,25 @@ namespace generate {
     return path.includes(".md")
   }
 
+  function isWindows() {
+    return osType === "Windows_NT"
+  }
+
   function prefixPath(basePath:string,dirPath:string):string {
-    let index = basePath.indexOf("/")
+    let index
+    if (isWindows()) {
+      index = basePath.indexOf("\\")
+    } else {
+      index = basePath.indexOf("/")
+    }
     // 去除一级目录地址
     basePath = basePath.slice(index,path.length)
     // replace用于处理windows电脑的路径用\表示的问题
-    return path.join(basePath,dirPath).replace(/\\/g,"/")
+    if (isWindows()) {
+      return path.join(basePath,dirPath).replace(/\\/g,"/")
+    } else {
+      return path.join(basePath,dirPath)
+    }
   }
 }
 

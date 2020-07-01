@@ -1,5 +1,4 @@
 let {sidebar} = require('./slide-bar-config/core')
-let webpackConfig = require('./webpack.config')
 module.exports = {
   base: "",
   port: 8085,
@@ -25,7 +24,7 @@ module.exports = {
       { text: '业务手记', link: '/guide/',icon:"reco-blog" },
       { text: '理论也很重要吖',link: "/study/",icon: "reco-coding" },
       { text: '心情笔录', link: '/mood/',icon: "reco-suggestion" },
-      { text: '个人简历', link:'/resume/',icon: "reco-eye"},
+      // { text: '个人简历', link:'/resume/',icon: "reco-eye"},
       { text: '时间记忆', link: '/timeline/', icon: 'reco-date' }
 
     ],
