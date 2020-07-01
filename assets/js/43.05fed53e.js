@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[43],{356:function(t,n,e){"use strict";e.r(n);var s=e(0),l=Object(s.a)({},(function(){var t=this.$createElement,n=this._self._c||t;return n("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[n("p",[this._v("技术的作用应该是推动业务的发展，技术驱动业务，业务创造价值，而不是为了技术而技术\n")])])}),[],!1,null,null,null);n.default=l.exports}}]);
