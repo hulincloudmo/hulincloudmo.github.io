@@ -3,7 +3,7 @@ var fs = require('fs');
 var path = require('path');
 var os = require("os");
 var osType = os.type();
-var workFolder = "";
+var workFolder;
 var generate;
 (function (generate) {
     function resolve(basePath, resolvePath) {
@@ -67,18 +67,18 @@ var generate;
             }
             else {
                 if (checkFileType(ele)) {
-                    root.push(prefixPath(path, ele));
+                    root.push(prefixPathHandler(path, ele));
                 }
             }
         });
     }
-    function checkFileType(path) {
-        return path.includes(".md");
+    function checkFileType(filepath) {
+        return path.extname(filepath) === ".md";
     }
     function isWindows() {
         return osType === "Windows_NT";
     }
-    function prefixPath(basePath, dirPath) {
+    function prefixPathHandler(basePath, dirPath) {
         var index;
         if (isWindows()) {
             index = basePath.indexOf("\\");

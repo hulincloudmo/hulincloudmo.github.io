@@ -25,9 +25,6 @@ class Single {
 }
 ```
 
-2. ts实现
-<<<@/docs/study/design-pattern/single.ts
-
 ## 适配器模式（adapter）
 
 ::: tip

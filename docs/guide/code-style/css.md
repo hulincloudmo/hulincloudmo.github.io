@@ -34,6 +34,40 @@ border-bottom: 40px solid #ff0000;
 宽高为0时，将其中三边设置为透明，相当于左右两边的矩形切割成两个三角形，再隐藏掉一个三角形，就可以达到视觉上的三角形
 
 
+## 4.制作边框神器-border-image
+使用border-image可以方便的给一个容器加上四周边框
+
+```html
+<div style="width: 500px;
+height: 500px;
+border:30px solid transparent;
+border-image-source: url('https://blog.hulincloud.cn/8.jpg');
+border-image-slice: 10 10 10 10;">
+111
+</div>
+```
+
+## 5.visible和display:none的区别
+
+visible让元素不可见后还占用原来的空间，
+display:none则不占用原有位置，直接消失
+
+## 6.flex总是忘记的知识……
+`啊啊啊，这些知识怎么总是忘`
+
+1. flex的属性
+
+````
+flex: auto;
+flex: initial;
+flex: none;
+flex: 2;
+````
+flex-grow flex-shrink flex-basic(在元素宽度设置时，flex-basic有更高的优先级)
+
+
+
+
 
 
 

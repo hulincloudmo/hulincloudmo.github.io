@@ -24,6 +24,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@keyframes lina {
+
+}
 @require '../styles/mode.styl'
 .abstract-item
   position relative

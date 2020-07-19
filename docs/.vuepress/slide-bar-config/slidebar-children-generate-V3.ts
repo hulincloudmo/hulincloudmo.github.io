@@ -10,9 +10,10 @@ const fs = require('fs')
 const path = require('path')
 const os = require("os")
 const osType = os.type()
-let workFolder = ""
+let workFolder: string
 
 namespace generate {
+
   function resolve(basePath:string,resolvePath:string) {
     return path.resolve(basePath,resolvePath)
   }
@@ -82,21 +83,21 @@ namespace generate {
         readDirSync(elePath,root)
       } else {
         if (checkFileType(ele)) {
-          root.push(prefixPath(path,ele))
+          root.push(prefixPathHandler(path,ele))
         }
       }
     })
   }
 
-  function checkFileType(path:string) {
-    return path.includes(".md")
+  function checkFileType(filepath:string) {
+    return path.extname(filepath) === ".md"
   }
 
   function isWindows() {
     return osType === "Windows_NT"
   }
 
-  function prefixPath(basePath:string,dirPath:string):string {
+  function prefixPathHandler(basePath:string, dirPath:string):string {
     let index
     if (isWindows()) {
       index = basePath.indexOf("\\")

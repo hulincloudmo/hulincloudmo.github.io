@@ -28,8 +28,6 @@ setting-file-encoding-properties- UTF-8 **旁边的勾勾一定要钩上（trans
 
 安装sass使用国内源`gem sources -a https://gems.ruby-china.com/`
 
-3. 全项目搜索
-
 ### chrome
 
 1. 代码利用率分析

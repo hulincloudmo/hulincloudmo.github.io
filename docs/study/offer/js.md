@@ -230,6 +230,17 @@ obj1.foo2().call(obj2) // 'window' 'obj2'
 
 ```
 
+
+## new的作用
+
+1. 创建了一个全新的对象。
+2. 这个对象会被执行[[Prototype]]（也就是__proto__）链接。
+3. 生成的新对象会绑定到函数调用的this。
+4. 通过new创建的每个对象将最终被[[Prototype]]链接到这个函数的prototype对象上。
+5. 如果函数没有返回对象类型Object(包含Functoin, Array, Date, RegExg, Error)，那么new表达式中的函数调用会自动返回这个新的对象。
+
+
+
 ## js的作用域
 
 ````javascript
