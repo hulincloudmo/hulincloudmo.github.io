@@ -21,6 +21,12 @@ console.log(new Date("2019-1-2"))
 `${(new Date().getFullYear()+1).toString().padStart(2,"0")}-${(new Date().getMonth()+1).toString().padStart(2,"0")}`
 ```
 
+## npm
+
+### EACCES: permission denied 问题解决
+
+在指令后加上`--unsafe-perm=true --allow-root`
+
 ## 微信小程序
 
 ### 微信小程序的组件样式限制
@@ -36,3 +42,5 @@ console.log(new Date("2019-1-2"))
 
 ### springboot
 #### bean的名字不能重复，即使在不同文件夹也不行，注入的时候会冲突
+
+

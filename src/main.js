@@ -1,11 +1,9 @@
-import Vue from 'vue'
+import { createApp } from 'vue';
 import App from './App.vue'
-import VueRouter from 'vue-router'
-const vueRouter = new VueRouter({
-  routes:[]
-})
-Vue.config.productionTip = false
+import router from './router'
+import Antd from 'ant-design-vue';
+const app = createApp(App)
+app.use(router)
+app.use(Antd)
 
-new Vue({
-  render: h => h(App)
-}).$mount('#app')
+app.mount('#app')

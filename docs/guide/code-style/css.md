@@ -65,6 +65,15 @@ flex: 2;
 ````
 flex-grow flex-shrink flex-basic(在元素宽度设置时，flex-basic有更高的优先级)
 
+5. 单行文本居中，多行文本居左显示
+
+```css
+.c {
+display: flex;
+justify-content: center;
+}
+```
+
 
 
 

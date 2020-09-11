@@ -70,6 +70,5 @@ document.addEventListener("click",()=> {
 
 webpackPrefetch会将你的代码变成在网络空闲的时候去加载，也就是整个网站都已经加载完毕了，才会去加载这些文件，比如说首页中进入的登录框就可以做成这样的效果
 
-## css代码分割
 
 

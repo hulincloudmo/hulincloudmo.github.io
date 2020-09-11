@@ -63,5 +63,8 @@
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
   },
-  "files": ["./docs/.vuepress/slide-bar-config/slidebar-children-generate-V3.ts"]
+  "compileOnSave": true,
+  "include": [
+    "/src"
+  ]
 }
