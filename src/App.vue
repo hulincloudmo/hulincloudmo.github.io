@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div id="subapp-viewport"></div>
     <router-view></router-view>
   </div>
 </template>

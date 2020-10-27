@@ -11,30 +11,34 @@
   },
   "dependencies": {
     "@ant-design/icons-vue": "^5.1.5",
-    "ant-design-vue": "^2.0.0-beta.9",
+    "ant-design-vue": "^2.0.0-beta.10",
     "axios": "^0.20.0",
     "core-js": "^2.6.5",
     "mockjs": "^1.1.0",
-    "vue": "^3.0.0-beta.1",
-    "vue-router": "4.0.0-beta.9",
-    "vuepress-theme-reco": "^1.2.1"
+    "qiankun": "^2.0.26",
+    "vue": "^2.6.11",
+    "vue-router": "4.0.0-beta.13",
+    "vuepress-plugin-boxx": "^0.0.7",
+    "vuepress-plugin-img-lazy": "^1.0.4",
+    "vuepress-theme-reco": "^1.5.7"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.12.0",
     "@vue/cli-plugin-eslint": "^3.12.0",
-    "@vue/cli-service": "^3.12.0",
-    "@vue/compiler-sfc": "^3.0.0-beta.1",
+    "@vue/cli-service": "4.5.7",
+    "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
     "cz-conventional-changelog": "^3.1.0",
     "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^7.0.0-alpha.0",
+    "eslint-plugin-vue": "^7.0.1",
     "node-sass": "^4.13.1",
     "typescript": "^3.8.3",
-    "vue-cli-plugin-vue-next": "~0.1.3",
-    "vuepress": "^1.1.0",
+    "vue-cli-plugin-vue-next": "~0.1.4",
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.6.0",
     "vuepress-plugin-flowchart": "^1.4.3",
-    "webpack": "^4.41.6",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.11"
   },
   "eslintConfig": {
@@ -43,7 +47,6 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/vue3-essential",
       "@vue/standard"
     ],
     "rules": {},

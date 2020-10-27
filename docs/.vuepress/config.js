@@ -4,8 +4,9 @@ module.exports = {
   port: 8085,
   title: '墨墨 lee',
   theme: 'reco',
+  evergreen: true,
   description: '陌上花开，可缓缓归矣',
-  plugin: ['flowchart'],
+  plugin: [['flowchart'],['img-lazy'],['vuepress-plugin-boxx']],
   themeConfig: {
     repo: 'https://github.com/hulincloudmo/hulincloudmo.github.io',
     record: "桂ICP备19002590号",

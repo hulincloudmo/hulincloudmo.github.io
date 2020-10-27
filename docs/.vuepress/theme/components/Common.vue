@@ -23,9 +23,9 @@
         <Sidebar
           :items="sidebarItems"
           @toggle-sidebar="toggleSidebar">
-          <slot
-            name="sidebar-top"
-            slot="top"/>
+          <template slot="top">
+            <PersonalInfo />
+          </template>
           <slot
             name="sidebar-bottom"
             slot="bottom"/>
@@ -34,7 +34,6 @@
         <Password v-show="!isHasPageKey" :isPage="true" class="password-wrapper-in" key="in"></Password>
         <div :class="{ 'hide': !isHasPageKey }">
           <slot></slot>
-          <Comments :isShowComments="shouldShowComments"/>
         </div>
       </div>
     </div>
@@ -54,9 +53,9 @@
           <Sidebar
             :items="sidebarItems"
             @toggle-sidebar="toggleSidebar">
-            <slot
-              name="sidebar-top"
-              slot="top"/>
+            <template slot="top">
+              <PersonalInfo />
+            </template>
             <slot
               name="sidebar-bottom"
               slot="bottom"/>
@@ -65,7 +64,6 @@
           <Password v-if="!isHasPageKey" :isPage="true"></Password>
           <div v-else>
             <slot></slot>
-            <Comments :isShowComments="shouldShowComments"/>
           </div>
         </div>
       </transition>
@@ -74,24 +72,26 @@
 </template>
 
 <script>
-import md5 from 'md5'
 import Navbar from '@theme/components/Navbar'
 import Sidebar from '@theme/components/Sidebar'
-import { resolveSidebarItems } from '@theme/helpers/utils'
+import PersonalInfo from '@theme/components/PersonalInfo'
 import Password from '@theme/components/Password'
 import { setTimeout } from 'timers'
+import moduleTransitonMixin from '@theme/mixins/moduleTransiton'
 
 export default {
-  components: { Sidebar, Navbar, Password },
+  mixins: [moduleTransitonMixin],
+
+  components: { Sidebar, Navbar, Password, PersonalInfo },
 
   props: {
     sidebar: {
       type: Boolean,
       default: true
     },
-    isComment: {
-      type: Boolean,
-      default: true
+    sidebarItems: {
+      type: Array,
+      default: () => []
     }
   },
 
@@ -107,15 +107,6 @@ export default {
   computed: {
     absoluteEncryption () {
       return this.$themeConfig.keyPage && this.$themeConfig.keyPage.absoluteEncryption === true
-    },
-    // 是否显示评论
-    shouldShowComments () {
-      const { isShowComments, home } = this.$frontmatter
-      return !(
-        this.isComment == false ||
-        isShowComments == false ||
-        home == true
-      )
     },
 
     shouldShowNavbar () {
@@ -137,22 +128,7 @@ export default {
     },
 
     shouldShowSidebar () {
-      const { frontmatter } = this.$page
-      return (
-        this.sidebar !== false &&
-        !frontmatter.home &&
-        frontmatter.sidebar !== false &&
-        this.sidebarItems.length
-      )
-    },
-
-    sidebarItems () {
-      return resolveSidebarItems(
-        this.$page,
-        this.$page.regularPath,
-        this.$site,
-        this.$localePath
-      )
+      return this.sidebarItems.length > 0
     },
 
     pageClasses () {
@@ -187,7 +163,7 @@ export default {
       }
 
       let { keys } = keyPage
-      keys = keys.map(item => md5(item))
+      keys = keys.map(item => item.toLowerCase())
       this.isHasKey = keys && keys.indexOf(sessionStorage.getItem('key')) > -1
     },
     hasPageKey () {
@@ -197,7 +173,7 @@ export default {
         return
       }
 
-      pageKeys = pageKeys.map(item => md5(item))
+      pageKeys = pageKeys.map(item => item.toLowerCase())
 
       this.isHasPageKey = pageKeys.indexOf(sessionStorage.getItem(`pageKey${window.location.pathname}`)) > -1
     },
@@ -271,23 +247,7 @@ export default {
   .hide
     height 100vh
     overflow hidden
-.theme-container.no-sidebar
-  .comments-wrapper
-    padding-left 2rem
 
-.comments-wrapper
-  padding 2rem 2rem 2rem 22rem
-  max-width: 740px;
-  margin: 0 auto;
-@media (max-width: $MQNarrow)
-  .theme-container.no-sidebar
-    .comments-wrapper
-      padding-left 2rem
-  .comments-wrapper
-    padding-left: 18.4rem;
-@media (max-width: $MQMobile)
-  .comments-wrapper
-    padding-left: 2rem
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }

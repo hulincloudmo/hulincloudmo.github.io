@@ -4,7 +4,7 @@
 @require './arrow'
 @require './wrapper'
 @require './toc'
-@require './iconfont.css'
+// @require './iconfont.css'
 
 html, body
   padding 0
@@ -13,7 +13,7 @@ body
   font-family Ubuntu, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
-  font-size 16px
+  font-size 15px
   color var(--text-color)
   background-color var(--background-color)
 
@@ -56,8 +56,6 @@ body
 
 .content__default:not(.custom)
   @extend $wrapper
-  // > *:first-child
-  //   margin-top 1.6rem
   a:hover
     text-decoration underline
   p.demo
@@ -66,10 +64,16 @@ body
     border-radius 4px
   img
     max-width 100%
+  *:first-child
+    margin-top 0
 
 .content__default.custom
   padding 0
   margin 0
+  img
+    max-width 100%
+
+.abstract
   img
     max-width 100%
 
@@ -106,28 +110,36 @@ strong
   font-weight 600
 
 h1, h2, h3, h4, h5, h6
+  font-weight 500
+  line-height 1.25
   .content__default:not(.custom) > &
-    margin-top (0.5rem - $navbarHeight)
-    padding-top ($navbarHeight + 1rem)
-    margin-bottom 0
+    margin-top (2.1rem - $navbarHeight)
+    padding-top $navbarHeight
+    margin-bottom 1rem
     &:first-child
       margin-top -3.5rem
-      margin-bottom 1rem
-      + p, + pre, + .custom-block
-        margin-top 2rem
-  &:hover .header-anchor
-    opacity: 1
 
 h1
-  font-size 1.95rem
+  display none
+  font-size 1.6rem
+  &.title
+    display block
 
 h2
-  font-size 1.65rem
-  padding-bottom .3rem
-  border-bottom 1px solid var(--border-color)
+  position relative
+  padding-left 0.8rem
+  font-size 1.4rem
+  &::before
+    position: absolute
+    left 0
+    bottom 0
+    display: block
+    height 1.8rem
+    content: ''
+    border-left 5px solid $accentColor
 
 h3
-  font-size 1.35rem
+  font-size 1.2rem
 
 a.header-anchor
   font-size 0.85em
@@ -143,7 +155,7 @@ code, kbd, .line-number
   font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
 
 p, ul, ol
-  line-height 1.7
+  line-height 2.2
 
 hr
   border 0
@@ -185,27 +197,25 @@ th, td
 @require 'mobile.styl'
 
 .iconfont
-  font-size: 0.9rem;
-  color: $textColorSub;
+  font-family: "iconfont",Ubuntu,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif !important
+  font-size: 13px;
+  color: var(--text-color-sub);
 
 /************** 滚动条 **************/
 ::-webkit-scrollbar
-  width: 6px;
+  width: 5px;
   height: 5px;
 
 ::-webkit-scrollbar-track-piece
-  background-color: rgba(0, 0, 0, 0.2);
-  -webkit-border-radius: 6px;
+  // background-color: rgba(0, 0, 0, 0.2);
 
 ::-webkit-scrollbar-thumb:vertical
   height: 5px;
-  background-color: rgba(125, 125, 125, 0.7);
-  -webkit-border-radius: 6px;
+  background-color: $accentColor;
 
 ::-webkit-scrollbar-thumb:horizontal
   width: 5px;
-  background-color: rgba(125, 125, 125, 0.7);
-  -webkit-border-radius: 6px;
+  background-color: $accentColor;
 
 /************** 流程图的滚动条 **************/
 .vuepress-flowchart
@@ -214,10 +224,11 @@ th, td
 /************** SW-Update Popup **************/
 
 .sw-update-popup
-  border-radius: $borderRadius;
-  box-shadow: var(--box-shadow);
-  color: var(--text-color);
-  background: var(--background-color);
+  border-radius: $borderRadius!important;
+  box-shadow: var(--box-shadow)!important;
+  color: var(--text-color)!important;
+  background: var(--background-color)!important;
+  border: none!important;
   > button
     background: $accentColor;
     border-radius: $borderRadius;

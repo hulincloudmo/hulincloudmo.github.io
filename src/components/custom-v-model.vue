@@ -7,19 +7,19 @@
 </template>
 
 <script>
-  export default {
-    name: 'custom-v-model',
-    model: {
-      prop: 'text',
-      event: 'change'
-    },
-    props: {
-      text: String,
-      default() {
-        return ''
-      }
+export default {
+  name: 'custom-v-model',
+  model: {
+    prop: 'text',
+    event: 'change'
+  },
+  props: {
+    text: String,
+    default () {
+      return ''
     }
   }
+}
 </script>
 
 <style scoped>

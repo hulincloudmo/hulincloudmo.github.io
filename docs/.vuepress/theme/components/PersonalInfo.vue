@@ -15,27 +15,38 @@
   <div class="num">
     <div>
       <h3>{{$recoPosts.length}}</h3>
-      <h6>文章</h6>
+      <h6>{{homeBlogCfg.article}}</h6>
     </div>
     <div>
       <h3>{{$tags.list.length}}</h3>
-      <h6>标签</h6>
+      <h6>{{homeBlogCfg.tag}}</h6>
     </div>
   </div>
   <hr>
 </div>
 </template>
 
+<script>
+export default {
+  computed: {
+    homeBlogCfg () {
+      return this.$recoLocales.homeBlog
+    }
+  }
+}
+</script>
+
 <style lang="stylus" scoped>
 .personal-info-wrapper {
   .personal-img {
     display block
-    margin 2rem auto
-    width 8rem
-    height 8rem
+    margin 2rem auto 1rem
+    width 6rem
+    height 6rem
     border-radius 50%
   }
   .name {
+    font-size 1rem
     text-align center
     color var(--text-color)
   }
@@ -45,7 +56,7 @@
     width 80%
     > div {
       text-align center
-      flex auto
+      flex 0 0 50%
       &:first-child {
         border-right 1px solid #333
       }

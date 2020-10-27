@@ -1,74 +1,57 @@
 <template>
   <div class="mode-options">
-    <h4 class="title">颜色模式</h4>
+    <h4 class="title">Choose mode</h4>
     <ul class="color-mode-options">
       <li
         v-for="(mode, index) in modeOptions"
         :key="index"
         :class="getClass(mode.mode)"
-        @click="selectMode(mode)"
+        @click="selectMode(mode.mode)"
       >{{ mode.title }}</li>
     </ul>
   </div>
 </template>
 
 <script>
-import setMode, { activateMode } from './setMode'
-
+import applyMode from './applyMode'
 export default {
   name: 'ModeOptions',
 
   data () {
     return {
       modeOptions: [
-        { mode: 'dark', title: '深色' },
-        { mode: 'auto', title: '自动' },
-        { mode: 'light', title: '明亮' }
+        { mode: 'dark', title: 'dark' },
+        { mode: 'auto', title: 'auto' },
+        { mode: 'light', title: 'light' }
       ],
       currentMode: 'auto'
     }
   },
 
   mounted () {
-    // this.currentMode = mode === null ? 'auto' : mode
-    // fixed: 第一次启动时自动模式无法正确切换的BUG
-    // 更优雅的实现
-    let mode = localStorage.getItem('mode') || 'auto'
-    // if(mode === null) {
-    //   this.currentMode = 'auto'
-    //   mode = 'auto'
-    // }
-    if (mode === 'dark') {
-      activateMode('dark')
-    } else if (mode === 'light') {
-      activateMode('light')
-    } else if (mode === 'auto') {
-      this.getNow()
-    }
+    // modePicker 开启时默认使用用户主动设置的模式
+    this.currentMode = localStorage.getItem('mode') || this.$themeConfig.mode || 'auto'
+
+    // Dark and Light autoswitches
+    // 为了避免在 server-side 被执行，故在 Vue 组件中设置监听器
+    var that = this
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(() => {
+      that.$data.currentMode === 'auto' && applyMode(that.$data.currentMode)
+    })
+    window.matchMedia('(prefers-color-scheme: light)').addListener(() => {
+      that.$data.currentMode === 'auto' && applyMode(that.$data.currentMode)
+    })
+
+    applyMode(this.currentMode)
   },
 
   methods: {
-    getNow() {
-      const now = new Date()
-      const hour = now.getHours()
-      if(hour > 6 && hour <= 17) {
-        activateMode('light')
-      } else {
-        activateMode('dark')
-      }
-    },
     selectMode (mode) {
-      if (mode.mode === this.currentMode) {
-        return
-      } else if (mode.mode === 'dark') {
-        activateMode('dark')
-      } else if (mode.mode === 'light') {
-        activateMode('light')
-      } else if (mode.mode === 'auto') {
-        this.getNow()
+      if (mode !== this.currentMode) {
+        this.currentMode = mode
+        applyMode(mode)
+        localStorage.setItem('mode', mode)
       }
-      localStorage.setItem('mode', mode.mode)
-      this.currentMode = mode.mode
     },
     getClass (mode) {
       return mode !== this.currentMode ? mode : `${mode} active`

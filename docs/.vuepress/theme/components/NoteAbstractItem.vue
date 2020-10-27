@@ -1,13 +1,13 @@
 <template>
   <div
-    class="abstract-item">
+    class="abstract-item"
+    @click="$router.push(item.path)">
     <i v-if="item.frontmatter.sticky" class="iconfont reco-sticky"></i>
     <div class="title">
       <i v-if="item.frontmatter.keys" class="iconfont reco-lock"></i>
       <router-link :to="item.path">{{item.title}}</router-link>
     </div>
     <div class="abstract" v-html="item.excerpt"></div>
-    <hr class="hr">
     <PageInfo
       :pageInfo="item"
       :currentTag="currentTag">
@@ -24,9 +24,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@keyframes lina {
-
-}
 @require '../styles/mode.styl'
 .abstract-item
   position relative
@@ -39,6 +36,10 @@ export default {
   box-sizing: border-box;
   transition all .3s
   background-color var(--background-color)
+  cursor: pointer;
+  > * {
+    pointer-events: auto;
+  }
   .reco-sticky
     position absolute
     top 0
@@ -51,8 +52,10 @@ export default {
   .title
     position: relative;
     font-size: 1.28rem;
-    line-height: 36px;
+    line-height: 46px;
     display: inline-block;
+    a
+      color: var(--text-color);
     .reco-lock
       font-size 1.28rem
       color $accentColor
@@ -76,7 +79,6 @@ export default {
       transform: scaleX(1);
   .tags
     .tag-item
-      cursor: pointer;
       &.active
         color $accentColor
       &:hover

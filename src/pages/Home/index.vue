@@ -9,10 +9,10 @@
 
 <script>
 import { ref } from 'vue'
-import useFullScreen from "@/core/hooks/useFullScreen.ts"
+import useFullScreen from '@/core/hooks/useFullScreen.ts'
 export default {
-  name: "index",
-  setup() {
+  name: 'index',
+  setup () {
     const { availHeight, availWidth } = useFullScreen()
     return {
       availHeight,

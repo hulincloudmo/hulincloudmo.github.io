@@ -2,7 +2,8 @@ language: node_js # node环境
 node_js:
   - lts/*
 script:
-  - npm run docs:build # 执行命令
+  - npm install
+  npm run docs:build # 执行命令
 deploy:
   provider: pages
   skip-cleanup: true

@@ -37,6 +37,9 @@ tags:
 
 日期格式转换
 
+8. `nvm切换默认node版本`
+
+`nvm alias default stable`
 
 
 

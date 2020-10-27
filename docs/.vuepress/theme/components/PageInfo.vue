@@ -25,9 +25,7 @@
         :key="subIndex"
         class="tag-item"
         :class="{ 'active': currentTag == subItem }"
-        @click="goTags(subItem)">
-        {{subItem}}
-      </span>
+        @click.stop="goTags(subItem)">{{subItem}}</span>
     </i>
   </div>
 </template>
@@ -79,13 +77,15 @@ export default {
         return formatDate(value)
       } else {
         // 用户没有输入或者输入了 00:00:00
-        return formatDate(value, 'yyyy/MM/dd')
+        return formatDate(value, 'yyyy-MM-dd')
       }
     }
   },
   methods: {
     goTags (tag) {
-      this.$router.push({ path: `/tags/${tag}/` })
+      if (this.$route.path !== `/tag/${tag}/`) {
+        this.$router.push({ path: `/tag/${tag}/` })
+      }
     }
   }
 }
@@ -101,8 +101,8 @@ export default {
     margin-left 0.5rem
 .tags
   .tag-item
-    cursor pointer
     font-family Ubuntu, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
+    cursor pointer
     &.active
       color $accentColor
     &:hover

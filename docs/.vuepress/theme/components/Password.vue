@@ -32,7 +32,7 @@
           <a>
             <span v-if="$themeConfig.author || $site.title">{{ $themeConfig.author || $site.title }}</span>
             &nbsp;&nbsp;
-            <span v-if="$themeConfig.startYear">{{ $themeConfig.startYear }} - </span>
+            <span v-if="$themeConfig.startYear && $themeConfig.startYear != year">{{ $themeConfig.startYear }} - </span>
             {{ year }}
           </a>
         </span>
@@ -97,18 +97,18 @@ export default {
       }, 800)
     },
     inputFocus () {
-      this.warningText = '我要看小秘密'
+      this.warningText = 'Input Your Key'
     },
     inputBlur () {
-      this.warningText = '不行不行!你不能看'
+      this.warningText = 'Konck! Knock!'
     },
     isHasKey () {
       let { keys } = this.$themeConfig.keyPage
-      keys = keys.map(item => md5(item))
+      keys = keys.map(item => item.toLowerCase())
       return keys.indexOf(sessionStorage.getItem('key')) > -1
     },
     isHasPageKey () {
-      const pageKeys = this.$frontmatter.keys.map(item => md5(item))
+      const pageKeys = this.$frontmatter.keys.map(item => item.toLowerCase())
       const pageKey = `pageKey${window.location.pathname}`
 
       return pageKeys && pageKeys.indexOf(sessionStorage.getItem(pageKey)) > -1

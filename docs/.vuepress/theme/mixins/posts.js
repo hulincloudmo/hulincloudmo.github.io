@@ -7,11 +7,11 @@ export default {
         $categories: { list: articles }
       } = this
 
-      let posts = articles.reduce((allData, currnetData) => {
-        return [...allData, ...currnetData.pages]
+      let posts = articles.reduce((allData, currentData) => {
+        return [...allData, ...currentData.pages]
       }, [])
 
-      posts = filterPosts(posts)
+      posts = filterPosts(posts, false)
       sortPostsByStickyAndDate(posts)
 
       return posts
@@ -41,13 +41,24 @@ export default {
       }
 
       return formatPagesArr
+    },
+    $showSubSideBar () {
+      const {
+        $themeConfig: { subSidebar: themeSubSidebar, sidebar: themeSidebar },
+        $frontmatter: { subSidebar: pageSubSidebar, sidebar: pageSidebar }
+      } = this
+
+      const headers = this.$page.headers || []
+
+      return [themeSubSidebar, themeSidebar, pageSubSidebar, pageSidebar].indexOf('auto') > -1 &&
+             headers.length > 0
     }
   }
 }
 
 function renderTime (date) {
   var dateee = new Date(date).toJSON()
-  return new Date(+new Date(dateee) + 8 * 3600 * 1000).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '')
+  return new Date(+new Date(dateee) + 8 * 3600 * 1000).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '').replace(/-/g, '/')
 }
 function dateFormat (date, type) {
   date = renderTime(date)
