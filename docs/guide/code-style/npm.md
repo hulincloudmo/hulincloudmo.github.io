@@ -33,7 +33,7 @@ tags:
 
 方便的查看console输出信息，可配合`AlloyLever`使用
 
-7. `day-js`
+7. `day-js、moment`
 
 日期格式转换
 

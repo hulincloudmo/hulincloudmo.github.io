@@ -119,3 +119,25 @@ export {
     accSubtract
 }
 ```
+
+## 最大请求次数限制
+
+```javascript
+function maxRequest(fn, maxNum) {
+  return new Promise(function (resolve, reject) {
+    if (maxNum === 0) {
+      reject('max request')
+      return
+    }
+    Promise.resolve(fn().then(data => {
+      if (data.code !== 1) {
+        throw new Error('should next request')
+      } else {
+        resolve(data)
+      }
+    })).catch(() => {
+      return maxRequest(fn, maxNum - 1)
+    })
+  })
+}
+```

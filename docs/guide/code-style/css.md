@@ -130,6 +130,3 @@ margin: auto
         padding: 30px;
         background-color: aqua;
 ```
-
-## 4.grid布局
-
