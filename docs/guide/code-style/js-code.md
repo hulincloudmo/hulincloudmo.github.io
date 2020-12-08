@@ -54,7 +54,21 @@ class Weak {
 
 Typescript内置的private属性也可以实现私有的成员变量
 
+## 数组拷贝
 
+1. 浅拷贝
+
+- arr.slice()
+
+2. 展开 
+
+- arr.flat()
+
+## promise
+
+1. 异步串行
+
+- Promise.allSettled()
 
 
 
