@@ -35,6 +35,10 @@ setting-file-encoding-properties- UTF-8 **旁边的勾勾一定要钩上（trans
 使用command+shift+p输入>show coverage
 
 
+2. 关闭跨域检测
+
+`open -n /Applications/Google\ Chrome\ Dev.app --args --disable-web-security  --user-data-dir=/Users/mokaihang/chrome-unsafe-data`
+
 
 
 

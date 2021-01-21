@@ -54,11 +54,17 @@ class Weak {
 
 Typescript内置的private属性也可以实现私有的成员变量
 
-## 数组拷贝
+## 数组拷贝、对象拷贝
 
 1. 浅拷贝
 
 - arr.slice()
+
+- {...obj}
+
+2. 深拷贝
+
+- json.parse()
 
 2. 展开 
 

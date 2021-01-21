@@ -43,5 +43,11 @@ tags:
 
 9. `numjs转换数据格式`
 
+10. `npm一键更新`
+
+`npm install -g npm-check-updates`
+
+再使用ncu命令即可更新node_modules
+
 
 

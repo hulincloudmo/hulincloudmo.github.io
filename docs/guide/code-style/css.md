@@ -130,3 +130,7 @@ margin: auto
         padding: 30px;
         background-color: aqua;
 ```
+
+## 9. margin设置负值
+
+`left` 和 `top`会造成元素本身向左或向上移动，`bottom`和`right`会让相邻元素向上或向左移动
