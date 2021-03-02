@@ -65,6 +65,7 @@
   },
   "compileOnSave": true,
   "include": [
-    "/src"
+    "/src",
+    "./docs/.vuepress/slide-bar-config"
   ]
 }

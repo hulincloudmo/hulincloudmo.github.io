@@ -24,7 +24,8 @@ namespace generate {
   interface articleModule {
     title: string,
     collapsable: boolean,
-    children: string[]
+    children: string[],
+    isSource?: boolean
   }
 
   export function start(basePath:string) {
@@ -36,7 +37,10 @@ namespace generate {
       const DirPath = resolve(basePath,item)
       let info = fs.statSync(DirPath)
       if (info.isDirectory()) {
-        result.push(articleModuleFactory(DirPath))
+        const worker = articleModuleFactory(DirPath)
+        if (!worker.isSource) {
+          result.push(worker)
+        }
       }
     }
     return result
@@ -44,14 +48,16 @@ namespace generate {
 
 // console.log(start("../../mood"))
 
-  function articleModuleFactory(dirPath:string):articleModule {
+  function articleModuleFactory(dirPath:string): articleModule {
     const mes = getMessage(resolve(dirPath,"./config.json"))
     const categoryName = mes.categoryName
     const collapsable  = mes.collapsable
+    const isSource = mes?.isSource
     return {
       title: categoryName,
       collapsable: collapsable,
-      children: getChildren(dirPath)
+      children: getChildren(dirPath),
+      isSource
     }
   }
 

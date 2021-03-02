@@ -19,7 +19,10 @@ var generate;
             var DirPath = resolve(basePath, item);
             var info = fs.statSync(DirPath);
             if (info.isDirectory()) {
-                result.push(articleModuleFactory(DirPath));
+                var worker = articleModuleFactory(DirPath);
+                if (!worker.isSource) {
+                    result.push(worker);
+                }
             }
         }
         return result;
@@ -29,10 +32,12 @@ var generate;
         var mes = getMessage(resolve(dirPath, "./config.json"));
         var categoryName = mes.categoryName;
         var collapsable = mes.collapsable;
+        var isSource = mes === null || mes === void 0 ? void 0 : mes.isSource;
         return {
             title: categoryName,
             collapsable: collapsable,
-            children: getChildren(dirPath)
+            children: getChildren(dirPath),
+            isSource: isSource
         };
     }
     function getMessage(dirPath) {

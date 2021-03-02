@@ -8,6 +8,7 @@ declare namespace generate {
         title: string;
         collapsable: boolean;
         children: string[];
+        isSource?: boolean;
     }
     export function start(basePath: string): articleModule[];
     export {};
