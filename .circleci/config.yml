@@ -18,4 +18,7 @@ jobs:
 workflows:
   example-workflow:
     jobs:
-      - example-job
+      - example-job:
+        filters:
+          branches:
+            only: dev
