@@ -13,7 +13,8 @@ jobs:
       # replace with your preferred image
       - image: cimg/base:stable
     steps:
-      - node/install-packages
+      - node/install-packages:
+          app-dir: ../ 
       - run: npm run build
 workflows:
   example-workflow:
